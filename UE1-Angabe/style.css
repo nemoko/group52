@@ -1,7 +1,67 @@
-#header {
-	height:200px;
+body {
+ 	margin: 0px;
+	padding: 0px;
+ 	background-image:url("img/style1-background.png");
 } 
 
-#content {
-	width:900px;
+h1 {
+	margin: 0px;
+	padding: 0px;
+ 	font-size: 35px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+ 	text-align: left;
+}
+
+h2 {
+	font-style: bold;
+	font-size: 20px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: left;	
+}
+
+h3 {
+	font-size: 20px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: left;	
+}
+
+
+#logo {
+	float: left;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+#login {
+	float: right;
+	border-radius: 25px;
+	background: #f29400;
+}
+
+@media screen and (min-width:33em) {
+	#header {
+		height:60px;
+		background: #033058;
+	} 
+	
+	#content {
+		width:600px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+@media screen and (max-width:32em) {
+	#header {
+		height:50px;
+		background: #033058;
+	}
+
+	#content {
+		width:450px;
+	} 
+
 }

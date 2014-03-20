@@ -3,13 +3,58 @@
 	http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<meta name="group52" content="WE"/>
 		<title xml:lang="en">Title</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-
 	</head>
+	
 	<body>
-		<h1>First order header</h1>
-		<p>Paragraph content</p>
+		<div id="container">
+			
+			<div id="header">
+				<div id ="logo">
+					<img src="img/big-logo-small.png" alt="logo" style="float:left">
+				</div>
+					<h1>Quiz</h1>
+	
+				<div id ="login">
+					<h3>Anmelden</h3>
+				</div>
+
+			</div>
+
+			<div id ="content">
+				<br>
+				<br>
+				<h2> Persönliche Daten </h2>		
+				<br>
+				<h3>Vorname: </h3>
+
+				<form action="process.jsp" method="post">
+					<label for="vorname">Vorname:</label>
+					<input type="text" id="vorname" name="vorname"/>
+					<p>
+					<label for="nachname">Nachname:</label>
+					<input type="text" id="nachname" name="nachname"/>
+					<p>
+					<label for="geburtstag">Geburtstag:</label>
+					<input type="text" id="geburtstag" name="geburtstag"/>
+					<p>
+					<label for="vorname">Vorname:</label>
+					<input type="text" id="vorname" name="vorname"/>
+					<p>
+					<input type="submit" value="Registrieren" name="action"/>
+
+				</form>
+
+
+
+			</div>
+
+
+
+
+		</div>
 	</body>
 </html>
