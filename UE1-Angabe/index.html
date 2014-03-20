@@ -3,7 +3,7 @@
 	http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="group52" content="WE"/>
 		<title xml:lang="en">Title</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -28,30 +28,50 @@
 				<br>
 				<br>
 				<h2> Persönliche Daten </h2>		
-				<br>
-				<h3>Vorname: </h3>
 
 				<form action="process.jsp" method="post">
-					<label for="vorname">Vorname:</label>
+					<h4>
+					
+					<label class ="inputLabel" for="vorname">Vorname:</label>
 					<input type="text" id="vorname" name="vorname"/>
 					<p>
-					<label for="nachname">Nachname:</label>
+					<label class ="inputLabel" for="nachname">Nachname:</label>
 					<input type="text" id="nachname" name="nachname"/>
 					<p>
-					<label for="geburtstag">Geburtstag:</label>
+					<label class ="inputLabel" for="geburtstag">Geburtstag:</label>
 					<input type="text" id="geburtstag" name="geburtstag"/>
 					<p>
-					<label for="vorname">Vorname:</label>
-					<input type="text" id="vorname" name="vorname"/>
-					<p>
-					<input type="submit" value="Registrieren" name="action"/>
+					<label class ="inputLabel" class="geschlecht">Geschlecht:</label>
+					<select title="genre">
+						<option value="male">Männlich</option>
+						<option value="female">Weiblich</option>
+					</select>
 
+					<p>
+					
+					</h4>
+
+					<h2> Login Daten </h2>		
+					<h4>
+					<label class ="inputLabel" for="benuztername">Benutzername*:</label>
+					<input type="text" id="benuztername" name="benuztername"/>
+					<p>
+					<label class ="inputLabel" for="password">Passwort*:</label>
+					<input type="text" id="password" name="password"/>
+					<p>
+					<input type="submit" disabled="disabled" id="register" value="Registrieren" name="action"/>
+					</h4>
+
+					<br>
+					<h5>Mit "*" gekennzeichnete Pfelder sind Pflichpfelder</h5>
 				</form>
 
 
 
 			</div>
-
+		<div id="footer">
+			@ 2014 Big Quiz
+		</div>
 
 
 

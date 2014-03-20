@@ -28,6 +28,21 @@ h3 {
 	text-align: left;	
 }
 
+h4 {
+	font-weight:normal;
+	font-size: 18px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: left;	
+}
+
+h5 {
+	font-weight:normal;
+	font-size: 12px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: left;		
+}
 
 #logo {
 	float: left;
@@ -41,6 +56,17 @@ h3 {
 	background: #f29400;
 }
 
+#footer {
+
+}
+
+.inputLabel {
+	float: left;
+	width: 150px;
+	margin-left: 20px;
+}
+
+
 @media screen and (min-width:33em) {
 	#header {
 		height:60px;
@@ -48,7 +74,7 @@ h3 {
 	} 
 	
 	#content {
-		width:400px;
+		width:600px;
 		margin-left:auto;
 		margin-right:auto;
 	}
