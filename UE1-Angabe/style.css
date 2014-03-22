@@ -93,6 +93,22 @@ h6 {
 	background: #f29400;
 }
 
+#weiter {
+	float: right;
+	width:50px;
+
+	font-weight:bold;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+
+	padding: 3px 60px;
+	border-radius: 5px;
+
+	background:url(img/white-arrow-right.png) no-repeat center right 10px #36d344;
+	cursor: pointer;
+}
+
 #register {
 	float: right;
 	width: 100px;
@@ -124,38 +140,8 @@ h6 {
 	font-size: 18px;
  	font-family: Arial, sans-serif;
  	color:white;
-	text-align: left;	
+	text-align: center;
 }
-
-#spieler1 {
-	position: absolute;
-	top:-10px;
-	left:8%;
-}
-
-.question {
-	margin-top:25px;
-}
-
-#s1q1 {
-	background:url(img/correct-white.png);
-}
-#s1q2 {
-
-}
-#s1q3 {
-
-}
-#s2q1 {
-
-}
-#s2q2 {
-
-}
-#s2q3 {
-
-}
-
 
 #EWA {
 	font-weight: bold;
@@ -165,11 +151,29 @@ h6 {
 	text-align: center;	
 }
 
+#spieler1 {
+	position: absolute;
+	top:-10px;
+	left:8%;
+}
+
+#s1q1 {}
+
+#s1q2 {	margin-left: 30px; }
+
+#s1q3 { margin-left: 60px; }
+
 #spieler2 {
 	position: absolute;
 	top:-10px;
 	right:8%;
 }
+
+#s2q1 {}
+
+#s2q2 { margin-left: 30px; }
+
+#s2q3 { margin-left: 60px; }
 
 #question {
 	margin-top:60px;
@@ -180,6 +184,72 @@ h6 {
  	font-family: Arial, sans-serif;
  	color:white;	
 }
+
+.question {
+	position: absolute;
+	float:left;
+	margin-top:3px;
+}
+
+.answer {
+	position: absolute;
+
+	font-weight:normal;
+	font-size: 18px;
+ 	font-family: Arial, sans-serif;
+ 	text-align: center;
+
+	padding: 25px 40px;
+	border-radius: 5px;
+}
+
+#answerBox{
+	margin-top: 20px;
+}
+
+#answerBoxLeft {
+	position: relative;
+	width:300px;
+}
+
+#answerBoxRight {
+	position: relative;
+	width:300px;
+}
+
+/* <temporary solution> */
+#answerTL {
+	color: #033058;
+	background: #b9d6f0;
+}
+
+#answerTR {
+	color: white;
+	background: #033058;
+}
+
+#anwerBL {
+	color: white;
+	background: #033058;
+}
+
+#anwerBR {
+	color: #033058;
+	background: #b9d6f0;
+}
+/* </temporary solution> */
+
+#selected {
+	color: white;
+	background: #033058;
+}
+
+#unselected {
+	color: #033058;
+	background: #b9d6f0;
+}
+
+
 
 
 @media screen and (min-width:33em) {	
@@ -235,7 +305,7 @@ h6 {
 		position:relative;
 		margin-top: 25px;
 
-		width:290px;
+		width:100%;
 		margin-left:auto;
 		margin-right:auto;
 	}
