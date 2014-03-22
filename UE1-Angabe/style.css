@@ -121,7 +121,7 @@ h6 {
     margin-top:20px;
     
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
  	font-family: Arial, sans-serif;
  	color:white;
 	text-align: left;	
@@ -129,31 +129,56 @@ h6 {
 
 #spieler1 {
 	position: absolute;
-	top:0px;
+	top:-10px;
 	left:8%;
 }
 
+.question {
+	margin-top:25px;
+}
+
+#s1q1 {
+	background:url(img/correct-white.png);
+}
+#s1q2 {
+
+}
+#s1q3 {
+
+}
+#s2q1 {
+
+}
+#s2q2 {
+
+}
+#s2q3 {
+
+}
+
+
 #EWA {
-	margin-top: 50px;
-	margin-left: 47%;
-	left: 50%;
+	font-weight: bold;
+	font-size: 20px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: center;	
 }
 
 #spieler2 {
 	position: absolute;
-	top:0px;
+	top:-10px;
 	right:8%;
 }
 
 #question {
-	top:70px;
-	right: 50%;
+	margin-top:60px;
 
+	text-align: center;
 	font-weight: normal;
 	font-size: 23px;
  	font-family: Arial, sans-serif;
- 	color:white;
-	text-align: left;	
+ 	color:white;	
 }
 
 
@@ -172,6 +197,8 @@ h6 {
 
 	#quizContent {
 		position:relative;
+		margin-top: 25;
+		
 		width:100%;
 		margin-left:auto;
 		margin-right:auto;
@@ -206,6 +233,8 @@ h6 {
 
 	#quizContent {
 		position:relative;
+		margin-top: 25px;
+
 		width:290px;
 		margin-left:auto;
 		margin-right:auto;
