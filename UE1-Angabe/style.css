@@ -14,7 +14,7 @@ h1 {
 }
 
 h2 {
-	font-style: bold;
+	font-weight: bold;
 	font-size: 20px;
  	font-family: Arial, sans-serif;
  	color:white;
@@ -42,6 +42,14 @@ h5 {
 	font-size: 14px;
  	font-family: Arial, sans-serif;
  	color:white;
+}
+
+h6 {
+	font-weight:normal;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: center;	
 }
 
 #header {
@@ -99,15 +107,54 @@ h5 {
 
 	background:url(img/white-arrow-right.png) no-repeat center right 10px #cccccc;
 	cursor: pointer;
-
-
 }
 
 #footer {
-
+    font-weight:normal;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: center;	
 }
 
+.spieler {
+    margin-top:20px;
+    
+	font-weight: bold;
+	font-size: 20px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: left;	
+}
 
+#spieler1 {
+	position: absolute;
+	top:0px;
+	left:8%;
+}
+
+#EWA {
+	margin-top: 50px;
+	margin-left: 47%;
+	left: 50%;
+}
+
+#spieler2 {
+	position: absolute;
+	top:0px;
+	right:8%;
+}
+
+#question {
+	top:70px;
+	right: 50%;
+
+	font-weight: normal;
+	font-size: 23px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: left;	
+}
 
 
 @media screen and (min-width:33em) {	
@@ -117,7 +164,15 @@ h5 {
 	}
 
 	#content {
+		position:relative;
 		width:390px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	#quizContent {
+		position:relative;
+		width:100%;
 		margin-left:auto;
 		margin-right:auto;
 	}
@@ -125,10 +180,10 @@ h5 {
 	.inputLabel {
 	float: left;
 	width: 150px;
-}
+	}	
 }
 
-@media screen and (max-width:32em) {
+@media screen and (max-width:33em) {
 
 	.field {
 		width:96%;
@@ -137,16 +192,22 @@ h5 {
 	}
 
 	.inputLabel {
-	margin-left: 2%;
-	float: left;
-	width: 150px;
-}
+		margin-left: 2%;
+		float: left;
+		width: 150px;
+	}
 
 	#content {
+		position:relative;
 		width:auto;
 		margin-left:auto;
 		margin-right:auto;
-
 	} 
 
+	#quizContent {
+		position:relative;
+		width:290px;
+		margin-left:auto;
+		margin-right:auto;
+	}
 }
