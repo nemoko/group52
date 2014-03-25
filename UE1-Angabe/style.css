@@ -120,8 +120,9 @@ h6 {
 
 	padding: 3px 80px;
 	border-radius: 5px;
+	border-color: #006600;
 
-	background:url(img/white-arrow-right.png) no-repeat center right 10px #cccccc;
+	background:url(img/white-arrow-right.png) no-repeat center right 10px;
 	cursor: pointer;
 }
 

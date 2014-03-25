@@ -34,7 +34,7 @@
 				<br>
 				<h2> Persönliche Daten </h2>		
 
-				<form action="process.jsp" method="post">
+				<form name="mainForm" action="process.jsp" method="post">
 					<h4>
 					
 					<label class ="inputLabel" for="vorname">Vorname:</label>
@@ -44,7 +44,7 @@
 					<input class ="field" type="text" id="nachname" name="nachname"/>
 					<p>
 					<label class ="inputLabel" for="geburtstag">Geburtstag:</label>
-					<input class ="field" type="text" id="geburtstag" name="geburtstag"/>
+					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()"/>
 					<p>
 					<label class ="inputLabel" class="geschlecht">Geschlecht:</label>
 					<select class = "field" title="geschlecht">
@@ -59,12 +59,17 @@
 					<h2> Login Daten </h2>		
 					<h4>
 					<label class ="inputLabel" for="benuztername">Benutzername*:</label>
-					<input class ="field" type="text" id="benuztername" name="benuztername"/>
+					<input class ="field" type="text" id="benuztername" name="benutzername" onchange="validateUser()" pattern=".{4,8}" title="4-8 Zeichen"/>
 					<p>
 					<label class ="inputLabel" for="password">Passwort*:</label>
-					<input class ="field" type="text" id="password" name="password"/>
+					<input class ="field" type="text" id="password" name="password" onchange="validatePassword()" pattern=".{4,8}" title="4-8 Zeichen"/>
 					<p>
 					<input class ="field" type="submit" disabled="disabled" id="register" value="Registrieren" name="action"/>
+					<script>
+					validateDate();
+					validateUser();
+					validatePassword();
+					</script>
 					</h4>
 					<br>
 					<h5>Mit "*" gekennzeichnete Pfelder sind Pflichpfelder</h5>

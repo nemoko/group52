@@ -2,6 +2,12 @@
     Helper functions for the first exercise of the Web Engineering course
 */
 
+var birthdateOK = true;
+var passwordOK = false;
+var userOK = false;
+
+//var hasFormValidation = hasFormValidation();
+//var hasNativeDateInput = hasNativeDateInput();
 /* 
     checks if native form validation is available.
     Source/Further informations: http://diveintohtml5.info/everything.html
@@ -52,4 +58,43 @@ function secToMMSS(value){
         minutes = "0" + minutes;
     }
     return minutes + ":" + seconds;
+}
+
+function validateDate() {
+    var text = getNormalizedDateString("#geburtstag");
+    if (text.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/) == null && text != ''){
+        birthdateOK = false;
+    } else {
+        birthdateOK = true;
+    }
+    validateAll();
+}
+
+function validateUser(){
+    var text = document.forms["mainForm"].elements["benutzername"].value;
+    if ( text.length < 4 || text.length > 8){
+        userOK = false;
+    } else {
+        userOK = true;
+    }
+    validateAll();
+}
+function validatePassword(){
+    var text = document.forms["mainForm"].elements["password"].value;
+    if ( text.length < 4 || text.length > 8){
+        passwordOK = false;
+    } else {
+        passwordOK = true;
+    }
+    validateAll();
+}
+
+function validateAll(){
+    if (userOK && passwordOK && birthdateOK) {
+        document.forms["mainForm"].elements["action"].disabled = false;
+        document.forms["mainForm"].elements["action"].style.backgroundColor = "#36d344";
+    } else {
+        document.forms["mainForm"].elements["action"].disabled = true;
+        document.forms["mainForm"].elements["action"].style.backgroundColor = "#CCCCCC";
+    }
 }
