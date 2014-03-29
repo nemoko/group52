@@ -103,9 +103,11 @@ h6 {
 	font-size: 16px;
  	font-family: Arial, sans-serif;
  	color:white;
-	padding: 3px 60px;
+	/*padding: 3px 60px;*/
+	padding-right:85px;
+	padding-left: 40px;
 	border-radius: 5px;
-
+		
 	background:url(img/white-arrow-right.png) no-repeat center right 10px #36d344;
 	cursor: pointer;
 
