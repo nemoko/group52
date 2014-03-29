@@ -203,7 +203,6 @@ h6 {
 #answerBox{
 	margin-top: 20px;
 	
-	user-select: none;
     -khtml-user-select: none;
     -o-user-select: none;
     -moz-user-select: -moz-none;
