@@ -44,7 +44,7 @@
 					<input class ="field" type="text" id="nachname" name="nachname"/>
 					<p>
 					<label class ="inputLabel" for="geburtstag">Geburtstag:</label>
-					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()"/>
+					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})" title="Please enter a valid date dd.mm.YYYY" placeholder="dd.mm.YYYY"/>
 					<p>
 					<label class ="inputLabel" class="geschlecht">Geschlecht:</label>
 					<select class = "field" title="geschlecht">

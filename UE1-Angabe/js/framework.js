@@ -64,8 +64,10 @@ function validateDate() {
     var text = getNormalizedDateString("#geburtstag");
     if (text.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/) == null && text != ''){
         birthdateOK = false;
+        //document.forms["mainForm"].elements["geburtstag"].value = "invalid";
     } else {
         birthdateOK = true;
+        //document.forms["mainForm"].elements["geburtstag"].valid = true;
     }
     validateAll();
 }
