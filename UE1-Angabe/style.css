@@ -42,6 +42,7 @@ h5 {
 	font-size: 14px;
  	font-family: Arial, sans-serif;
  	color:white;
+ 	margin-top: 70px;
 }
 
 h6 {
@@ -94,6 +95,7 @@ h6 {
 }
 
 #weiter {
+	margin-top: 20px;
 	float: right;
 	width:50px;
 
@@ -107,6 +109,17 @@ h6 {
 
 	background:url(img/white-arrow-right.png) no-repeat center right 10px #36d344;
 	cursor: pointer;
+
+	display: block;
+}
+
+#footer {
+
+    font-weight:normal;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: center;	
 }
 
 #register {
@@ -124,14 +137,6 @@ h6 {
 
 	background:url(img/white-arrow-right.png) no-repeat center right 10px;
 	cursor: pointer;
-}
-
-#footer {
-    font-weight:normal;
-	font-size: 16px;
- 	font-family: Arial, sans-serif;
- 	color:white;
-	text-align: center;	
 }
 
 .spieler {
@@ -192,57 +197,38 @@ h6 {
 	margin-top:3px;
 }
 
-.answer {
-	font-weight:normal;
-	font-size: 18px;
- 	font-family: Arial, sans-serif;
- 	text-align: center;
-
-	padding: 30px 180px; /*	padding: 5% 30%; */ 
-	border-radius: 5px;
-}
-
 #answerBox{
 	margin-top: 20px;
-}
-
-#answerBoxLeft {
-	float:left;
-	margin-top: 0px;
-	margin-left: 0px;
-	margin-right: auto;
-	width:630px;
-
-}
-
-#answerBoxRight {
-	float: right;
-	margin-left: auto;
-	margin-right: 0px;
-	width:630px;
-
 }
 
 /* <temporary solution> */
 #answerTL {
 	color: #033058;
 	background: #b9d6f0;
+	margin-bottom: 20px;
+	margin-right: 5px;
+
 }
 
 #answerTR {
-
 	color: white;
 	background: #033058;
+	margin-bottom: 20px;
+	margin-left: 5px;
+
 }
 
 #anwerBL {
 	color: white;
 	background: #033058;
+	margin-right: 5px;
+
 }
 
 #anwerBR {
 	color: #033058;
 	background: #b9d6f0;
+	margin-left: 5px;
 }
 /* </temporary solution> */
 
@@ -256,17 +242,17 @@ h6 {
 	background: #b9d6f0;
 }
 
-
-
-
 @media screen and (min-width:33em) {	
 
 	.field {
+		float: right;
+		margin-left: auto;
+		margin-right: auto;
 		width:240px;
+		margin-bottom: 14px;
 	}
 
 	#content {
-		position:relative;
 		width:390px;
 		margin-left:auto;
 		margin-right:auto;
@@ -282,9 +268,41 @@ h6 {
 	}
 
 	.inputLabel {
-	float: left;
-	width: 150px;
+		float: left;
+		width: 130px;
+		margin-bottom: 20px;
 	}	
+
+	.answer {
+		font-weight:normal;
+		font-size: 18px;
+	 	font-family: Arial, sans-serif;
+	 	text-align: center;
+
+		padding: 30px 180px; /*	padding: 5% 30%; */ 
+		border-radius: 5px;
+	}
+
+	#answerBoxLeft {
+		float:left;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: auto;
+		width:auto;
+
+	}
+
+	#answerBoxRight {
+		float: right;
+		margin-left: auto;
+		margin-right: 0px;
+		width:auto;
+
+	}
+
+	#timerAndWeiter {
+		
+	}
 }
 
 @media screen and (max-width:33em) {
@@ -302,7 +320,6 @@ h6 {
 	}
 
 	#content {
-		position:relative;
 		width:auto;
 		margin-left:auto;
 		margin-right:auto;
@@ -315,5 +332,35 @@ h6 {
 		width:100%;
 		margin-left:auto;
 		margin-right:auto;
+	}
+
+	.answer {
+		font-weight:normal;
+		font-size: 18px;
+	 	font-family: Arial, sans-serif;
+	 	text-align: center;
+
+		padding: 30px 180px; /*	padding: 5% 30%; */ 
+		border-radius: 5px;
+	}
+
+	#answerBoxLeft {
+		float:left;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: auto;
+		width:auto;
+	}
+
+	#answerBoxRight {
+		margin-top: 20px;
+		float: right;
+		margin-left: auto;
+		margin-right: 0px;
+		width:auto;
+	}
+
+	#timerAndWeiter {
+
 	}
 }
