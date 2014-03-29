@@ -123,8 +123,10 @@ h6 {
 	font-size: 16px;
  	font-family: Arial, sans-serif;
  	color:white;
+ 	
+ 	padding-right:145px;
+	padding-left: 40px;
 
-	padding: 3px 80px;
 	border-radius: 5px;
 	border-color: #006600;
 
@@ -383,6 +385,7 @@ font-weight:normal;
 
 	display: block;
 	}
+	
 
 	.answer {
 		font-weight:normal;
