@@ -103,7 +103,6 @@ h6 {
 	font-size: 16px;
  	font-family: Arial, sans-serif;
  	color:white;
-
 	padding: 3px 60px;
 	border-radius: 5px;
 
@@ -113,16 +112,6 @@ h6 {
 	display: block;
 }
 
-#footer {
-
-	margin-top: 150px;
-
-    font-weight:normal;
-	font-size: 16px;
- 	font-family: Arial, sans-serif;
- 	color:white;
-	text-align: center;	
-}
 
 #register {
 	float: right;
@@ -268,30 +257,54 @@ h6 {
 		width:80%;
 		margin-left:auto;
 		margin-right:auto;
+		align: center;
+		vertical-align: middle;
 	}
 
 	.inputLabel {
-		float: left;
+	
+			float: left;
+			margin-left: auto;
+		margin-right: auto;
 		width: 130px;
-		margin-bottom: 20px;
+		margin-bottom: 16px;
 	}	
 
+#footer {
+	margin-top: 70px;
+	margin-bottom: 20px;
+    font-weight:normal;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: center;	
+}
+
+
 	.answer {
-		font-weight:normal;
+		vertical-align:middle;
+	text-align: center;
+	width:auto;
+	height: 6%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30%;
+	padding-right: 30%;
+	padding-bottom: 20px;
+	padding-top: 20px;
+border-radius: 5px;
+font-weight:normal;
 		font-size: 18px;
 	 	font-family: Arial, sans-serif;
 	 	text-align: center;
-
-		padding: 30px 180px; /*	padding: 5% 30%; */ 
-		border-radius: 5px;
 	}
-
+	
 	#answerBoxLeft {
 		float:left;
 		margin-top: 0px;
 		margin-left: 0px;
 		margin-right: auto;
-		width:auto;
+		width:49%;
 
 	}
 
@@ -299,7 +312,7 @@ h6 {
 		float: right;
 		margin-left: auto;
 		margin-right: 0px;
-		width:auto;
+		width:49%;
 
 	}
 
@@ -331,10 +344,42 @@ h6 {
 	#quizContent {
 		position:relative;
 		margin-top: 25px;
+		margin-left: 8%;
+	 	margin-right: 8%;
+	 	width: 86%;
 
-		width:100%;
-		margin-left:auto;
-		margin-right:auto;
+	}
+	
+	#footer {
+	position: absolute;
+	margin-top: 300px;
+	margin-bottom: 5%;
+	margin-left: 35%;
+    font-weight:normal;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+	text-align: center;	
+	}
+
+	#weiter {
+	margin-top: 20px;
+	float: right;
+	
+	margin-left: 2%;
+		margin-right: 2%;
+		width:95%;
+	font-weight:bold;
+	font-size: 16px;
+ 	font-family: Arial, sans-serif;
+ 	color:white;
+
+	border-radius: 5px;
+
+	background:url(img/white-arrow-right.png) no-repeat center right 10px #36d344;
+	cursor: pointer;
+
+	display: block;
 	}
 
 	.answer {
@@ -342,25 +387,26 @@ h6 {
 		font-size: 18px;
 	 	font-family: Arial, sans-serif;
 	 	text-align: center;
-
-		padding: 30px 180px; /*	padding: 5% 30%; */ 
+	 	padding-bottom: 10px;
+	 	padding-top: 10px;
+		/*padding: 30px 180px; /*	padding: 5% 30%; */ 
 		border-radius: 5px;
 	}
 
 	#answerBoxLeft {
 		float:left;
 		margin-top: 0px;
-		margin-left: 0px;
-		margin-right: auto;
-		width:auto;
+		margin-left: 2%;
+		margin-right: 2%;
+		width:96%;
 	}
 
 	#answerBoxRight {
 		margin-top: 20px;
 		float: right;
-		margin-left: auto;
-		margin-right: 0px;
-		width:auto;
+		margin-left: 2%;
+		margin-right: 2%;
+		width:96%;
 	}
 
 	#timerAndWeiter {
