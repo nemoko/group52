@@ -42,7 +42,7 @@ h5 {
 	font-size: 14px;
  	font-family: Arial, sans-serif;
  	color:white;
- 	margin-top: 70px;
+ 	margin-top: 150px;
 }
 
 h6 {
@@ -114,6 +114,8 @@ h6 {
 }
 
 #footer {
+
+	margin-top: 150px;
 
     font-weight:normal;
 	font-size: 16px;
@@ -260,7 +262,7 @@ h6 {
 
 	#quizContent {
 		position:relative;
-		margin-top: 25;
+		margin-top: 25px;
 		
 		width:80%;
 		margin-left:auto;
@@ -301,7 +303,7 @@ h6 {
 	}
 
 	#timerAndWeiter {
-		
+		margin-top: 200px;
 	}
 }
 
@@ -361,6 +363,6 @@ h6 {
 	}
 
 	#timerAndWeiter {
-
+		margin-top: auto; /* ???????????????? */
 	}
 }
