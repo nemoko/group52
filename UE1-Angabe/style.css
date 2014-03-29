@@ -197,6 +197,7 @@ h6 {
 	font-size: 18px;
  	font-family: Arial, sans-serif;
  	text-align: center;
+	cursor: pointer;
 
 	padding: 30px 180px; /*	padding: 5% 30%; */ 
 	border-radius: 5px;
@@ -204,6 +205,12 @@ h6 {
 
 #answerBox{
 	margin-top: 20px;
+	
+	user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
 }
 
 #answerBoxLeft {
@@ -231,27 +238,16 @@ h6 {
 
 #answerTR {
 
-	color: white;
-	background: #033058;
-}
-
-#anwerBL {
-	color: white;
-	background: #033058;
-}
-
-#anwerBR {
 	color: #033058;
 	background: #b9d6f0;
 }
-/* </temporary solution> */
 
-#selected {
-	color: white;
-	background: #033058;
+#anwerBL {
+	color: #033058;
+	background: #b9d6f0;
 }
 
-#unselected {
+#anwerBR {
 	color: #033058;
 	background: #b9d6f0;
 }

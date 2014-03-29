@@ -98,3 +98,33 @@ function validateAll(){
         document.forms["mainForm"].elements["action"].style.backgroundColor = "#CCCCCC";
     }
 }
+
+function changeToMarked(id){
+	var elem = document.getElementById(id);
+	var color = $(elem).css("background-color");
+	var colorInHex = stringRGB2HEX(color);
+	if(colorInHex == "#b9d6f0"){
+		document.getElementById(id).style.backgroundColor = "#033058";
+		document.getElementById(id).style.color = "white";
+	} else {
+		document.getElementById(id).style.backgroundColor = "#b9d6f0";
+		document.getElementById(id).style.color = "#033058";
+	}
+}
+
+//http://stackoverflow.com/questions/638948/background-color-hex-to-javascript-variable
+function _rgb2hex(rgb_string, r, g, b) 
+   {
+      //VERY IMPORTANT: by adding (1 << 24) we avoid 'rgb(0, 0, 0)' to be mistakenly converted into '#0'
+      var rgb = (1 << 24) | (parseInt(r) << 16) | (parseInt(g) << 8) | parseInt(b); //same thing of: ( r + (256 * g) + (65536 * b) + 16777216)
+      //toString(16) specify hex 16 radix, works only for numbers [source: http://msdn.microsoft.com/en-us/library/dwab3ed2(v=VS.85).aspx]   
+      return '#' + rgb.toString(16).substr(1); //substr(1) because we have to remove the (1 << 24) added above
+   }
+
+//http://stackoverflow.com/questions/638948/background-color-hex-to-javascript-variable
+function stringRGB2HEX(string)
+   {
+      if(typeof string === 'string')
+         string = string.replace(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/g, _rgb2hex);
+      return string;
+   }
