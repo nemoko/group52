@@ -9,7 +9,9 @@
         
 		<script type="text/javascript" src="js/jquery.js"> </script>
 		<script type="text/javascript" src="js/framework.js"> </script>
-
+<script>
+changeToMarked(id);
+</script>
 		<title xml:lang="en">Title</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -69,27 +71,33 @@
 			
 				<div id="answerBox">
 					<div id ="answerBoxLeft">
-						<div id="answerTL" class ="answer">
+						<div id="answerTL" class ="answer" onclick="changeToMarked('answerTL')">
 							IT Strategie
 						</div>
 
-						<div id="answerTR" class ="answer">
-							Semistrukturierte Daten
+						<div id="anwerBL" class ="answer" onclick="changeToMarked('anwerBL')">
+							Web Engineering
 						</div>
 					</div>
 					
-					<div id ="answerBoxLeft">
-						<div id="anwerBL" class ="answer">
-							Web Engineering
+					<div id ="answerBoxRight">
+						<div id="answerTR" class ="answer" onclick="changeToMarked('answerTR')">
+							Semistrukturierte Daten
 						</div>
 
-						<div id="anwerBR" class ="answer">
+						<div id="anwerBR" class ="answer" onclick="changeToMarked('anwerBR')">
 							Objektorientierte Modellierung
 						</div>
 					</div>
+					
 				</div>
 
-				<input class ="field" type="submit" disabled="disabled" id="weiter" value="weiter" name="action"/>
+				<div id="timerAndWeiter">
+					<div>
+					<input class ="field" type="submit" disabled="disabled" id="weiter" value="weiter" name="action"/>
+					</div>
+				</div>
+				
 
 			</div>
 

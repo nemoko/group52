@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+	
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="group52" content="WE"/>
+		<meta name="description" content="WE"/>
 
 		<script type="text/javascript" src="js/jquery.js"> </script>
 		<script type="text/javascript" src="js/framework.js"> </script>
 
-		<title xml:lang="en">Title</title>
+		<title >Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	
@@ -32,50 +31,53 @@
 			<div id ="content">
 				<br>
 				<br>
-				<h2> Persönliche Daten </h2>		
+				<div>
+					<h2> Persönliche Daten </h2>		
+				</div>
 
 				<form name="mainForm" action="process.jsp" method="post">
 					<h4>
 					
 					<label class ="inputLabel" for="vorname">Vorname:</label>
 					<input class ="field" type="text" id="vorname" name="vorname"/>
-					<p>
+
 					<label class ="inputLabel" for="nachname">Nachname:</label>
 					<input class ="field" type="text" id="nachname" name="nachname"/>
-					<p>
+
 					<label class ="inputLabel" for="geburtstag">Geburtstag:</label>
-					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()" title="Please enter a valid date dd.mm.YYYY" placeholder="dd.mm.YYYY"/>
-					<p>
+					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})" title="Please enter a valid date dd.mm.YYYY" placeholder="dd.mm.YYYY"/>
+
 					<label class ="inputLabel" class="geschlecht">Geschlecht:</label>
 					<select class = "field" title="geschlecht">
 						<option value="male">Männlich</option>
 						<option value="female">Weiblich</option>
 					</select>
-
-					<p>
-					
 					</h4>
 
-					<h2> Login Daten </h2>		
+				
+					<div>
+						<h2> Login Daten </h2>		
+					</div>
+
 					<h4>
 					<label class ="inputLabel" for="benuztername">Benutzername*:</label>
-					<input class ="field" type="text" id="benuztername" name="benutzername" onchange="validateUser()" required pattern=".{4,8}" title="4-8 Zeichen"/>
-					<p>
+					<input class ="field" type="text" id="benuztername" name="benutzername" onchange="validateUser()" pattern=".{4,8}" title="4-8 Zeichen"/>
+					</h4>
+					
+					<h4>
 					<label class ="inputLabel" for="password">Passwort*:</label>
-					<input class ="field" type="text" id="password" name="password" onchange="validatePassword()" required pattern=".{4,8}" title="4-8 Zeichen"/>
-					<p>
+					<input class ="field" type="text" id="password" name="password" onchange="validatePassword()" pattern=".{4,8}" title="4-8 Zeichen"/>
+					</h4>
+
 					<input class ="field" type="submit" disabled="disabled" id="register" value="Registrieren" name="action"/>
 					<script>
-					$(document).ready(function(){
-                        //initialize();
-                        validateDate();
-                        validateUser();
-                        validatePassword();
-					});
+					validateDate();
+					validateUser();
+					validatePassword();
 					</script>
-					</h4>
-					<br>
+					
 					<h5>Mit "*" gekennzeichnete Pfelder sind Pflichpfelder</h5>
+
 				</form>
 
 
