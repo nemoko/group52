@@ -6,8 +6,8 @@ var birthdateOK = true;
 var passwordOK = false;
 var userOK = false;
 
-//var hasFormValidation = hasFormValidation();
-//var hasNativeDateInput = hasNativeDateInput();
+var hasFormValidation = hasFormValidation();
+var hasNativeDateInput = hasNativeDateInput();
 /* 
     checks if native form validation is available.
     Source/Further informations: http://diveintohtml5.info/everything.html
@@ -60,33 +60,63 @@ function secToMMSS(value){
     return minutes + ":" + seconds;
 }
 
+/*function initialize(){
+    if(hasFormValidation){
+        if(hasNativeDateInput){
+        } else {
+            document.getElementById('geburtstag').onchange = function validateDate2(){
+                validateDate();
+            };
+            //$('#geburtstag').onchange = validateDate();
+            //document.forms["mainForm"].elements["geburtstag"]. = validateDate();
+            //document.forms["mainForm"].elements["geburtstag"].pattern = (\d{1,2})\.(\d{1,2})\.(\d{4});
+        }
+    }
+} */
+
 function validateDate() {
-    var text = getNormalizedDateString("#geburtstag");
-    if (text.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/) == null && text != ''){
-        birthdateOK = false;
-        //document.forms["mainForm"].elements["geburtstag"].value = "invalid";
+    if (hasFormValidation && hasNativeDateInput) {
+        birthdateOK = document.forms["mainForm"].elements["geburtstag"].checkValidity();
     } else {
-        birthdateOK = true;
-        //document.forms["mainForm"].elements["geburtstag"].valid = true;
+        var text = getNormalizedDateString("#geburtstag");
+        if (text.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/) == null && text != ''){
+            birthdateOK = false;
+            document.forms["mainForm"].elements["geburtstag"].style.borderColor = "#B00000";
+        } else {
+            birthdateOK = true;
+            document.forms["mainForm"].elements["geburtstag"].style.borderColor = "#FFFFFF";
+        }
     }
     validateAll();
 }
 
 function validateUser(){
-    var text = document.forms["mainForm"].elements["benutzername"].value;
-    if ( text.length < 4 || text.length > 8){
-        userOK = false;
+    if (hasFormValidation) {
+        userOK = document.forms["mainForm"].elements["benutzername"].checkValidity();
     } else {
-        userOK = true;
+        var text = document.forms["mainForm"].elements["benutzername"].value;
+        if ( text.length < 4 || text.length > 8){
+            userOK = false;
+            document.forms["mainForm"].elements["benutzername"].style.borderColor = "#B00000";
+        } else {
+            userOK = true;
+            document.forms["mainForm"].elements["benutzername"].style.borderColor = "#FFFFFF";
+        }
     }
     validateAll();
 }
 function validatePassword(){
-    var text = document.forms["mainForm"].elements["password"].value;
-    if ( text.length < 4 || text.length > 8){
-        passwordOK = false;
+    if (hasFormValidation) {
+        passwordOK = document.forms["mainForm"].elements["password"].checkValidity();
     } else {
-        passwordOK = true;
+        var text = document.forms["mainForm"].elements["password"].value;
+        if ( text.length < 4 || text.length > 8){
+            passwordOK = false;
+            document.forms["mainForm"].elements["password"].style.borderColor = "#B00000";
+        } else {
+            passwordOK = true;
+            document.forms["mainForm"].elements["password"].style.borderColor = "#FFFFFF";
+        }
     }
     validateAll();
 }

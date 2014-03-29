@@ -44,7 +44,7 @@
 					<input class ="field" type="text" id="nachname" name="nachname"/>
 					<p>
 					<label class ="inputLabel" for="geburtstag">Geburtstag:</label>
-					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()" pattern="(\d{1,2})\.(\d{1,2})\.(\d{4})" title="Please enter a valid date dd.mm.YYYY" placeholder="dd.mm.YYYY"/>
+					<input class ="field" type="date" id="geburtstag" name="geburtstag" onchange="validateDate()" title="Please enter a valid date dd.mm.YYYY" placeholder="dd.mm.YYYY"/>
 					<p>
 					<label class ="inputLabel" class="geschlecht">Geschlecht:</label>
 					<select class = "field" title="geschlecht">
@@ -59,16 +59,19 @@
 					<h2> Login Daten </h2>		
 					<h4>
 					<label class ="inputLabel" for="benuztername">Benutzername*:</label>
-					<input class ="field" type="text" id="benuztername" name="benutzername" onchange="validateUser()" pattern=".{4,8}" title="4-8 Zeichen"/>
+					<input class ="field" type="text" id="benuztername" name="benutzername" onchange="validateUser()" required pattern=".{4,8}" title="4-8 Zeichen"/>
 					<p>
 					<label class ="inputLabel" for="password">Passwort*:</label>
-					<input class ="field" type="text" id="password" name="password" onchange="validatePassword()" pattern=".{4,8}" title="4-8 Zeichen"/>
+					<input class ="field" type="text" id="password" name="password" onchange="validatePassword()" required pattern=".{4,8}" title="4-8 Zeichen"/>
 					<p>
 					<input class ="field" type="submit" disabled="disabled" id="register" value="Registrieren" name="action"/>
 					<script>
-					validateDate();
-					validateUser();
-					validatePassword();
+					$(document).ready(function(){
+                        //initialize();
+                        validateDate();
+                        validateUser();
+                        validatePassword();
+					});
 					</script>
 					</h4>
 					<br>
