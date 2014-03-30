@@ -53,6 +53,12 @@ h6 {
 	text-align: center;	
 }
 
+h7 {
+	font-family: Arial;
+	color: white;
+	margin-left: 0px;
+}
+
 #header {
 	height:60px;
 	background: #033058;
@@ -237,6 +243,14 @@ h6 {
 	color: #033058;
 	background: #b9d6f0;
 }
+
+progress {
+	background-color: grey;
+	width: 350px;
+	margin-top: 10px;
+	float: left;
+}	
+
 
 @media screen and (min-width:33em) {	
 

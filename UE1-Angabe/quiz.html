@@ -9,9 +9,25 @@
         
 		<script type="text/javascript" src="js/jquery.js"> </script>
 		<script type="text/javascript" src="js/framework.js"> </script>
-<script>
-changeToMarked(id);
-</script>
+		
+		<script>
+			var counter = 0;
+			var interval = setInterval(function() {
+							counter++;
+							// Display 'counter' wherever you want to display it.
+							span = document.getElementById("countdown");
+							progressBar = document.getElementById("timer");
+							progressBar.value = 30 - counter;
+							span.innerHTML = secToMMSS(30 - counter);
+							
+							if (counter == 30) { counter = -1; }
+							}, 1000);
+		</script>
+
+		<script>
+			changeToMarked(id);
+		</script>
+		
 		<title xml:lang="en">Title</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -95,6 +111,26 @@ changeToMarked(id);
 				<div id="timerAndWeiter">
 					<div>
 					<input class ="field" type="submit" disabled="disabled" id="weiter" value="weiter" name="action"/>
+					</div>
+
+					
+					<div class="progressTimer">
+						<h7>
+							<p>
+							Verbleibende Zeit: <span id="countdown">00:30</span>
+							</p>
+						</h7>
+						
+						<progress id="timer" value="30" max="30"></progress>
+						
+						<div style= "float: left; margin-top: 16px;">
+							
+							<h7>
+								<p>
+								Letztes Spiel: NEIN
+								</p>
+							</h7>
+						</div>
 					</div>
 				</div>
 				
