@@ -5,6 +5,7 @@
 var birthdateOK = true;
 var passwordOK = false;
 var userOK = false;
+var answerCount = 2;
 
 var hasFormValidation = hasFormValidation();
 var hasNativeDateInput = hasNativeDateInput();
@@ -138,11 +139,21 @@ function changeToMarked(id){
 	if(colorInHex == "#b9d6f0"){
 		document.getElementById(id).style.backgroundColor = "#033058";
 		document.getElementById(id).style.color = "white";
+        answerCount += 1;
 	} else {
 		document.getElementById(id).style.backgroundColor = "#b9d6f0";
 		document.getElementById(id).style.color = "#033058";
+        answerCount -= 1;
 	}
+    if(answerCount > 0) {
+        document.getElementById("weiter").disabled = false;
+        document.getElementById("weiter").style.backgroundColor = "#36d344";
+    } else {
+        document.getElementById("weiter").disabled = true;
+        document.getElementById("weiter").style.backgroundColor = "#CCCCCC";
+    }
 }
+
 
 //http://stackoverflow.com/questions/638948/background-color-hex-to-javascript-variable
 function _rgb2hex(rgb_string, r, g, b) 
