@@ -7,6 +7,71 @@
 
 		<script type="text/javascript" src="js/jquery.js"> </script>
 		<script type="text/javascript" src="js/framework.js"> </script>
+        <script>
+            var birthdateOK = true;
+            var passwordOK = false;
+            var userOK = false;
+
+            var hasFormValidation = hasFormValidation();
+            var hasNativeDateInput = hasNativeDateInput();
+
+            function validateDate() {
+                if (hasFormValidation && hasNativeDateInput) {
+                    birthdateOK = document.forms["mainForm"].elements["geburtstag"].checkValidity();
+                } else {
+                    var text = getNormalizedDateString("#geburtstag");
+                    if (text.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/) == null && text != ''){
+                        birthdateOK = false;
+                        document.forms["mainForm"].elements["geburtstag"].style.borderColor = "#B00000";
+                    } else {
+                        birthdateOK = true;
+                        document.forms["mainForm"].elements["geburtstag"].style.borderColor = "#FFFFFF";
+                    }
+                }
+                validateAll();
+            }
+
+            function validateUser(){
+                if (hasFormValidation) {
+                    userOK = document.forms["mainForm"].elements["benutzername"].checkValidity();
+                } else {
+                    var text = document.forms["mainForm"].elements["benutzername"].value;
+                    if ( text.length < 4 || text.length > 8){
+                        userOK = false;
+                        document.forms["mainForm"].elements["benutzername"].style.borderColor = "#B00000";
+                    } else {
+                        userOK = true;
+                        document.forms["mainForm"].elements["benutzername"].style.borderColor = "#FFFFFF";
+                    }
+                }
+                validateAll();
+            }
+            function validatePassword(){
+                if (hasFormValidation) {
+                    passwordOK = document.forms["mainForm"].elements["password"].checkValidity();
+                } else {
+                    var text = document.forms["mainForm"].elements["password"].value;
+                    if ( text.length < 4 || text.length > 8){
+                        passwordOK = false;
+                        document.forms["mainForm"].elements["password"].style.borderColor = "#B00000";
+                    } else {
+                        passwordOK = true;
+                        document.forms["mainForm"].elements["password"].style.borderColor = "#FFFFFF";
+                    }
+                }
+                validateAll();
+            }
+
+            function validateAll(){
+                if (userOK && passwordOK && birthdateOK) {
+                    document.forms["mainForm"].elements["action"].disabled = false;
+                    document.forms["mainForm"].elements["action"].style.backgroundColor = "#36d344";
+                } else {
+                    document.forms["mainForm"].elements["action"].disabled = true;
+                    document.forms["mainForm"].elements["action"].style.backgroundColor = "#CCCCCC";
+                }
+            }
+        </script>
 
 		<title >Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -55,18 +120,18 @@
 					</h4>
 
 				
-					<div>
+					<div style= "">
 						<h2> Login Daten </h2>		
 					</div>
 
 					<h4>
 					<label class ="inputLabel" for="benuztername">Benutzername*:</label>
-					<input class ="field" type="text" id="benuztername" name="benutzername" onchange="validateUser()" pattern=".{4,8}" title="4-8 Zeichen"/>
+					<input class ="field" type="text" id="benuztername" name="benutzername" required="true" onchange="validateUser()" pattern=".{4,8}" title="4-8 Zeichen"/>
 					</h4>
 					
 					<h4>
 					<label class ="inputLabel" for="password">Passwort*:</label>
-					<input class ="field" type="text" id="password" name="password" onchange="validatePassword()" pattern=".{4,8}" title="4-8 Zeichen"/>
+					<input class ="field" type="text" id="password" name="password" required="true" onchange="validatePassword()" pattern=".{4,8}" title="4-8 Zeichen"/>
 					</h4>
 
 					<input class ="field" type="submit" disabled="disabled" id="register" value="Registrieren" name="action"/>
