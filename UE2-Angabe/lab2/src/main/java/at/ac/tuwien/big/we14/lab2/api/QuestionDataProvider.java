@@ -19,7 +19,8 @@ import java.util.List;
  */
 public interface QuestionDataProvider {
 
-	/**
+	/** Es macht nichts anderes als alle Fragen mit Kategorien von data.json laden und speichern
+	 * 
 	 * loads the question categories and its questions and choices from a
 	 * specific service.
 	 * 

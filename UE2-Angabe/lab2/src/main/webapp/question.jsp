@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
+
+
+<%@page contentType="text/html" pageEncoding="MacRoman"%>
+<jsp:useBean id="game" scope="session"  class="at.ac.tuwien.big.we14.lab2.api.impl.Game" />
+
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <meta charset="utf-8"/>
@@ -26,9 +32,9 @@
                 <div id="player1info">
                     <span id="player1name">Spieler 1</span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class="unknown">Unbekannt</span></li>
+                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class='${game.getPlayerQuestion1()}'>Richtig</span></li>
+                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class='${game.getPlayerQuestion2()}'>Falsch</span></li>
+                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class='${game.getPlayerQuestion3()}'>Unbekannt</span></li>
                     </ul>
                 </div>
                 <div id="player2info">
@@ -39,29 +45,30 @@
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
                     </ul>
                 </div>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Sport</div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span><%= game.getCategory().getName() %></div>
             </section>
             
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
                 
-                <form id="questionform" action="question.html" method="post">
+                <form id="questionform" action="BigQuizServlet" method="post">
                     <h2 id="questionheading" class="accessibility">Frage</h2>
-                    <p id="questiontext">Welche zwei LVAs werden im Model EWA zusammengefasst?</p>
+                    <p id="questiontext"><%= game.getQuestion().getText()%></p>
                     <ul id="answers">
-                        <li><input id="option1" type="checkbox"/><label for="option1">IT Strategie</label></li>
-                        <li><input id="option2" type="checkbox"/><label for="option2">Web Engineering</label></li>
-                        <li><input id="option3" type="checkbox"/><label for="option3">Semistrukturierte Daten</label></li>
-                        <li><input id="option4" type="checkbox"/><label for="option4">Objektorientierte Modellierung</label></li>
+                        <li><input id="option1" type="checkbox" name="checkedRows" value='${game.getAnswers(0)}'/><label for="option1"><%= game.getAnswers(0)%></label></li>
+                        <li><input id="option2" type="checkbox" name="checkedRows" value='${game.getAnswers(1)}'/><label for="option2"><%= game.getAnswers(1)%></label></li>
+                        <li><input id="option3" type="checkbox" name="checkedRows" value='${game.getAnswers(2)}'/><label for="option3"><%= game.getAnswers(2)%></label></li>
+                        <li><input id="option4" type="checkbox" name="checkedRows" value='${game.getAnswers(3)}'/><label for="option4"><%= game.getAnswers(3)%></label></li>
                     </ul>
                     <input id="timeleftvalue" type="hidden" value="100"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>
+                    <input type="hidden" name="action" value="weiter"/>
                 </form>
             </section>
             
             <section id="timer" aria-labelledby="timerheading">
                 <h2 id="timerheading" class="accessibility">Timer</h2>
-                <p><span id="timeleftlabel">Verbleibende Zeit:</span> <time id="timeleft">00:30</time></p>
+                <p><span id="timeleftlabel">Verbleibende Zeit:</span> <time id="timeleft"><%= game.getQuestion().getMaxTime()%></time></p>
                 <meter id="timermeter" min="0" low="20" value="100" max="100"/>
             </section>
             
@@ -71,14 +78,14 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">&copy 2014 BIG Quiz</footer>
         
         <script type="text/javascript">
             //<![CDATA[
             
             // initialize time
             $(document).ready(function() {
-                var maxtime = 30;
+                var maxtime = '${maxtime}';
                 var hiddenInput = $("#timeleftvalue");
                 var meter = $("#timer meter");
                 var timeleft = $("#timeleft");

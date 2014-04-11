@@ -31,8 +31,7 @@ public class ServletQuizFactory extends SimpleQuizFactory {
 
 	@Override
 	public QuestionDataProvider createQuestionDataProvider() {
-		InputStream inputStream = context
-				.getResourceAsStream("/WEB-INF/data.json");
+		InputStream inputStream = context.getResourceAsStream("/WEB-INF/data.json");
 		return new JSONQuestionDataProvider(inputStream, this);
 	}
 }

@@ -1,5 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
+
+<%@page contentType="text/html" pageEncoding="MacRoman"%>
+<jsp:useBean id="game" scope="session"  class="at.ac.tuwien.big.we14.lab2.api.impl.Game" />
+
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <meta charset="utf-8"/>
@@ -19,10 +24,10 @@
         </nav>
         
         <section role="main" id="quiz">
-          <a id="startgame" href="question.html">Quiz starten</a>
+          <a id="startgame" href= "BigQuizServlet?action=new" >Quiz starten</a>
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">&copy 2014 BIG Quiz</footer>
     </body>
 </html>

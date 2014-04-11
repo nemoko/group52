@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
+
+<%@page contentType="text/html" pageEncoding="MacRoman"%>
+<jsp:useBean id="game" scope="session"  class="at.ac.tuwien.big.we14.lab2.api.impl.Game" />
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <meta charset="utf-8"/>
@@ -32,9 +36,9 @@
                 <div id="player1info" class="playerinfo">
                     <span id="player1name" class="playername">Spieler 1</span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class="correct">Richtig</span></li>
+                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class='${game.getPlayerQuestion1()}'>Richtig</span></li>
+                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class='${game.getPlayerQuestion2()}'>Falsch</span></li>
+                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class='${game.getPlayerQuestion3()}'>Richtig</span></li>
                     </ul>
                     <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
                 </div>
@@ -47,11 +51,11 @@
                     </ul>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
                 </div>
-                <a id="next" href="question.html">Weiter</a>
+                <a id="next" href="BigQuizServlet?action=weiter">Weiter</a>
             </section>
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">&copy 2014 BIG Quiz</footer>
     </body>
 </html>

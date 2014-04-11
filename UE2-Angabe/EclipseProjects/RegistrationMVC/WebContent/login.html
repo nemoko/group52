@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <p>
+            Please provide your login data.
+            <form action="LoginServlet" method="GET">
+                <p>
+                    Username: <input type="text" name="username" value="" /><br/>
+                    Password: <input type="text" name="password" value="" /><br/>
+                    <input type="hidden" name="action" value="login"/>
+                </p>
+                <input type="submit" value="Submit" name="submit" />
+            </form>
+        </p>
+        <p>
+            <a href="registration.html">Register</a><br/>
+        </p>
+    </body>
+</html>

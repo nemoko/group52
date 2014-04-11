@@ -43,6 +43,7 @@ public class JSONQuestionDataProvider implements QuestionDataProvider {
 	@Override
 	public List<Category> loadCategoryData() {
 		GsonBuilder gsonBuilder = new GsonBuilder();
+		
 		gsonBuilder.registerTypeAdapter(Category.class,
 				new CategoryDeserializer(factory));
 
@@ -51,8 +52,8 @@ public class JSONQuestionDataProvider implements QuestionDataProvider {
 
 		Gson gson = gsonBuilder.create();
 
-		Type collectionType = new TypeToken<List<Category>>() {
-		}.getType();
+		Type collectionType = new TypeToken<List<Category>>() { }.getType();
+		
 		List<Category> categories = gson.fromJson(new InputStreamReader(
 				inputStream, Charsets.UTF_8), collectionType);
 

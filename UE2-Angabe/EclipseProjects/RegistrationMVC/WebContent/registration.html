@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Registration</h1>
+        Please provide your personal data and interests.
+        <form action="LoginServlet" method="POST">
+            <h2>Personal Data</h2>
+            <p>
+                Firstname: <input type="text" name="firstname" value="" /><br/>
+                Lastname: <input type="text" name="lastname" value="" /><br/>
+            </p>
+            <h2>Login Data</h2>
+            <p>
+                Username: <input type="text" name="username" value="" /><br/>
+                Password: <input type="text" name="password" value="" /><br/>
+            </p>
+            <h2>Interests</h2>
+            <p>
+                <input type="checkbox" name ="interests" value ="webEngineering"/>Web Engineering<br/>
+                <input type="checkbox" name ="interests" value ="modelEngineering"/>Model Engineering<br/>
+                <input type="checkbox" name ="interests" value ="semanticWeb"/>Semantic Web<br/>
+                <input type="checkbox" name ="interests" value ="objectOrientedModeling"/>Object Oriented Modeling<br/>
+                <input type="checkbox" name ="interests" value ="businessInformatics"/>Business Informatics<br/>
+            </p>
+            <input type="submit" value="Submit" name="submit" />
+        </form>
+        <p>
+            <a href="login.html">Login</a>
+        </p>
+    </body>
+</html>
