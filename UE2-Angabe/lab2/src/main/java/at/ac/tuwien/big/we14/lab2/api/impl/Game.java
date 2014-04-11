@@ -12,6 +12,10 @@ import at.ac.tuwien.big.we14.lab2.api.Choice;
 import at.ac.tuwien.big.we14.lab2.api.Question;
 import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
 
+//TODO Letztes Spiel: LocalStorage
+//TODO Computer als Gegner einbinden
+//TODO Falls unentschieden, soll durch Zeitdifferenz ausgerechnet werden, wer gewonnen hat
+
 public class Game {
 
 	private Random generator = new Random();
@@ -28,15 +32,14 @@ public class Game {
 	// Fragen, die in einer Runde gestellt worden sind
 	private List<Question> questions;
 
+	private List<Category> done_categories;
 	// Mixed Answers to one Question
 	private List<String> mix_answers;
 
-	private int player_points_round;
-	private int computer_points_round;
+	private int player_points;
+	private int player2_points;
 
-	private String player_question1 = "unknown";
-	private String player_question2 = "unknown";
-	private String player_question3 = "unknown";
+	OneRound one_round;
 
 	public void setQuestionsAndCategories(ServletContext context) {
 
@@ -44,14 +47,17 @@ public class Game {
 		this.quentions_and_categories = sqf.createQuestionDataProvider();
 		categories = quentions_and_categories.loadCategoryData();
 
+		done_categories = new ArrayList<Category>();
 	}
 
 	public void nextCategory() {
 
-		current_category = categories
-				.get(generator.nextInt(categories.size() - 1));
+		current_category = categories.get(getNewAvailableCategory());
+		// generator.nextInt(categories.size() - 1)
+		done_categories.add(current_category);
+
 		current_question = current_category.getQuestions().get(
-				generator.nextInt(current_category.getQuestions().size() - 1));
+				generator.nextInt(current_category.getQuestions().size()));
 
 		questions = new ArrayList<Question>();
 		questions.add(current_question);
@@ -60,15 +66,12 @@ public class Game {
 		mixAnswers();
 
 		current_runde_frage = 1;
-		player_points_round = 0;
 
-		player_question1 = "unknown";
-		player_question2 = "unknown";
-		player_question3 = "unknown";
+		one_round = new OneRound();
 	}
 
 	public Boolean nextQuestion(List<String> selected_choices) {
-		
+
 		boolean correct = true;
 
 		for (Choice correct_choices : current_question.getCorrectChoices()) {
@@ -93,21 +96,24 @@ public class Game {
 		mixAnswers();
 
 		if (correct) {
-			player_points_round++;
+
 			if (current_runde_frage - 1 == 1) {
-				player_question1 = "correct";
+				one_round.setPlayer_question1("correct");
+				one_round.IncrementPlayer();
 			} else if (current_runde_frage - 1 == 2) {
-				player_question2 = "correct";
+				one_round.setPlayer_question2("correct");
+				one_round.IncrementPlayer();
 			} else if (current_runde_frage - 1 == 3) {
-				player_question3 = "correct";
+				one_round.setPlayer_question3("correct");
+				one_round.IncrementPlayer();
 			}
 			return true;
 		} else if (current_runde_frage - 1 == 1) {
-			player_question1 = "incorrect";
+			one_round.setPlayer_question1("incorrect");
 		} else if (current_runde_frage - 1 == 2) {
-			player_question2 = "incorrect";
+			one_round.setPlayer_question2("incorrect");
 		} else if (current_runde_frage - 1 == 3) {
-			player_question3 = "incorrect";
+			one_round.setPlayer_question3("incorrect");
 		}
 		return false;
 	}
@@ -123,7 +129,7 @@ public class Game {
 
 			// Eine Random Zahl
 			location = generator
-					.nextInt(current_category.getQuestions().size() - 1);
+					.nextInt(current_category.getQuestions().size());
 
 			Question q = current_category.getQuestions().get(location);
 
@@ -141,6 +147,34 @@ public class Game {
 			}
 		}
 
+		return location;
+	}
+
+	// Liefert nächste Categorie zurück, die in noch nicht verwerdet wurde
+	private int getNewAvailableCategory() {
+
+		boolean not_found = true;
+		int location = 0;
+
+		while (not_found) {
+
+			// Eine Random Zahl
+			location = generator.nextInt(categories.size());
+
+			Category c = categories.get(location);
+
+			boolean occured = false;
+
+			for (Category cat : done_categories) {
+				if (cat.equals(c)) {
+					occured = true;
+					break;
+				}
+			}
+			if (!occured) {
+				not_found = false;
+			}
+		}
 		return location;
 	}
 
@@ -163,10 +197,6 @@ public class Game {
 		mix_answers = list;
 	}
 
-	public int getPlayerPointsRound() {
-		return player_points_round;
-	}
-
 	public String getAnswers(int nummer) {
 
 		if (nummer < mix_answers.size()) {
@@ -175,20 +205,50 @@ public class Game {
 			return "";
 		}
 	}
-
-	public String getPlayerQuestion1() {
-		return player_question1;
+	
+	public List<String> getAllAnswers(){
+		return mix_answers;
 	}
 
-	public String getPlayerQuestion2() {
-		return player_question2;
-	}
-
-	public String getPlayerQuestion3() {
-		return player_question3;
+	public OneRound getOneRound() {
+		return one_round;
 	}
 
 	public int getCurrentRundeFrage() {
 		return current_runde_frage;
+	}
+
+	public int getPlayedCategories() {
+		return done_categories.size();
+	}
+
+	// Wird nach jeder Runde ausgeführt und aktialisiert den winner
+	public void aktualizeRoundWinner() {
+		
+		one_round.checkWinner();
+		
+		if (one_round.getWinner().equals("Player 1")) {
+			player_points++;
+		} else if (one_round.getWinner().equals("Player 2")) {
+			player2_points++;
+		}
+	}
+	
+	public String getWinner() {
+		if (player_points > player2_points) {
+			return "Player 1";
+		} else if (player2_points > player_points) {
+			return "Player 2";
+		} else {
+			return "Player 1 und Player 2";
+		}
+	}
+	
+	public int getPlayer_points(){
+		return player_points;
+	}
+	
+	public int getPlayer2_points(){
+		return player2_points;
 	}
 }

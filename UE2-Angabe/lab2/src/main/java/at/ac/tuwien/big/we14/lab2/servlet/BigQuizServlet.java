@@ -64,7 +64,11 @@ public class BigQuizServlet extends HttpServlet {
 
 			}
 		}
-		if (game.getCurrentRundeFrage() == 4) {
+		if (game.getCurrentRundeFrage() == 4 && game.getPlayedCategories() == 5) {
+			request.getRequestDispatcher("finish.jsp").forward(request,
+					response);
+		} else if (game.getCurrentRundeFrage() == 4) {
+			game.aktualizeRoundWinner();
 			request.getRequestDispatcher("roundcomplete.jsp").forward(request,
 					response);
 		} else {

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
+
+<%@page contentType="text/html" pageEncoding="MacRoman"%>
+<jsp:useBean id="game" scope="session"  class="at.ac.tuwien.big.we14.lab2.api.impl.Game" />
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <meta charset="utf-8"/>
@@ -23,7 +27,7 @@
             <!-- winner message -->
             <section id="roundwinner" aria-labelledby="roundwinnerheading">
                 <h2 id="roundwinnerheading" class="accessibility">Endstand</h2>
-                <p class="roundwinnermessage">Spieler 2 gewinnt!</p>
+                <p class="roundwinnermessage"><%= game.getWinner() %></p>
             </section>
         
             <!-- round info -->    
@@ -31,17 +35,17 @@
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info" class="playerinfo">
                     <span id="player1name" class="playername">Spieler 1</span>
-                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
+                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds"><%= game.getPlayer_points() %></span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
                     <span id="player2name" class="playername">Spieler 2</span>
-                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
+                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%= game.getPlayer2_points() %></span></p>
                 </div>
-                <a id="next" href="question.html" accesskey="n">Neues Spiel</a>
+                <a id="next" href="BigQuizServlet?action=new" accesskey="n">Neues Spiel</a>
             </section>
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">&copy 2014 BIG Quiz</footer>
     </body>
 </html>

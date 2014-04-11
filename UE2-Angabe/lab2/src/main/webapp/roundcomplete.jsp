@@ -27,7 +27,7 @@
             <!-- winner message -->
             <section id="roundwinner" aria-labelledby="roundwinnerheading">
                 <h2 id="roundwinnerheading" class="accessibility">Rundenzwischenstand</h2>
-                <p class="roundwinnermessage">Spieler 2 gewinnt Runde 1!</p>
+                <p class="roundwinnermessage"><%=game.getOneRound().getWinner()%> gewinnt Runde <%= game.getPlayedCategories()%>!</p>
             </section>
         
             <!-- round info -->    
@@ -36,20 +36,20 @@
                 <div id="player1info" class="playerinfo">
                     <span id="player1name" class="playername">Spieler 1</span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class='${game.getPlayerQuestion1()}'>Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class='${game.getPlayerQuestion2()}'>Falsch</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class='${game.getPlayerQuestion3()}'>Richtig</span></li>
+                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class='${game.getOneRound().getPlayer_question1()}'>Richtig</span></li>
+                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class='${game.getOneRound().getPlayer_question2()}'>Falsch</span></li>
+                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class='${game.getOneRound().getPlayer_question3()}'>Richtig</span></li>
                     </ul>
-                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
+                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds"><%= game.getPlayer_points()%></span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
                     <span id="player2name" class="playername">Spieler 2</span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="correct">Richtig</span></li>
+                        <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class='${game.getOneRound().getPlayer2_question1()}'>Richtig</span></li>
+                        <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class='${game.getOneRound().getPlayer2_question2()}'>Richtig</span></li>
+                        <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class='${game.getOneRound().getPlayer2_question3()}'>Richtig</span></li>
                     </ul>
-                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
+                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%= game.getPlayer2_points()%></span></p>
                 </div>
                 <a id="next" href="BigQuizServlet?action=weiter">Weiter</a>
             </section>
