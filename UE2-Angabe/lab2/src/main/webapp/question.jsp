@@ -92,27 +92,14 @@
 					<%
 						for (int i = 0; i < game.getAllAnswers().size(); i++) {
 					%>
-
-
 					<li><input id="option<%=i%>" type="checkbox"
 						name="checkedRows" value="<%=game.getAnswers(i)%>" /><label
 						for="option<%=i%>"> <%=game.getAnswers(i)%></label></li>
-
 					<%
 						}
 					%>
 				</ul>
-				<%--
-				<ul id="answers">
-					<li><input id="option1" type="checkbox" name="checkedRows"
-						value='${game.getAnswers(0)}' /><label for="option1"><%=game.getAnswers(0)%></label></li>
-					<li><input id="option2" type="checkbox" name="checkedRows"
-						value='${game.getAnswers(1)}' /><label for="option2"><%=game.getAnswers(1)%></label></li>
-					<li><input id="option3" type="checkbox" name="checkedRows"
-						value='${game.getAnswers(2)}' /><label for="option3"><%=game.getAnswers(2)%></label></li>
-					<li><input id="option4" type="checkbox" name="checkedRows"
-						value='${game.getAnswers(3)}' /><label for="option4"><%=game.getAnswers(3)%></label></li>
-				</ul> --%>
+				
 				<input id="timeleftvalue" type="hidden" value="100" /> <input
 					id="next" type="submit" value="weiter" accesskey="s" /> <input
 					type="hidden" name="action" value="weiter" />

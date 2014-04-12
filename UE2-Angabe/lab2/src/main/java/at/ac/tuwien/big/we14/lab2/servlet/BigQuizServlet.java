@@ -64,10 +64,8 @@ public class BigQuizServlet extends HttpServlet {
 
 			}
 		}
-		if (game.getCurrentRundeFrage() == 4 && game.getPlayedCategories() == 5) {
-			request.getRequestDispatcher("finish.jsp").forward(request,
-					response);
-		} else if (game.getCurrentRundeFrage() == 4) {
+		
+		if (game.getCurrentRundeFrage() == 4) {
 			game.aktualizeRoundWinner();
 			request.getRequestDispatcher("roundcomplete.jsp").forward(request,
 					response);
@@ -109,12 +107,19 @@ public class BigQuizServlet extends HttpServlet {
 						response);
 
 			} else if (action.equals("weiter")) {
-
-				Game game = (Game) request.getSession().getAttribute("game");
-				game.nextCategory();
-				request.setAttribute("maxtime", game.getQuestion().getMaxTime());
-				request.getRequestDispatcher("question.jsp").forward(request,
-						response);
+				Game game = (Game) request.getSession()
+						.getAttribute("game");
+				
+				if (game.getPlayedCategories() == 5) {
+					request.getRequestDispatcher("finish.jsp").forward(request,
+							response);
+				} else {
+					game.nextCategory();
+					request.setAttribute("maxtime", game.getQuestion()
+							.getMaxTime());
+					request.getRequestDispatcher("question.jsp").forward(
+							request, response);
+				}
 			}
 		}
 	}

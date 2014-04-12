@@ -13,7 +13,6 @@ import at.ac.tuwien.big.we14.lab2.api.Question;
 import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
 
 //TODO Letztes Spiel: LocalStorage
-//TODO Computer als Gegner einbinden
 //TODO Falls unentschieden, soll durch Zeitdifferenz ausgerechnet werden, wer gewonnen hat
 
 public class Game {
@@ -41,6 +40,9 @@ public class Game {
 
 	OneRound one_round;
 
+	/*
+	 * Initialisieren alle Fragen mit Kategorien
+	 */
 	public void setQuestionsAndCategories(ServletContext context) {
 
 		ServletQuizFactory sqf = new ServletQuizFactory(context);
@@ -50,6 +52,9 @@ public class Game {
 		done_categories = new ArrayList<Category>();
 	}
 
+	/*
+	 * Wird Am Anfang jeder Runde ausgeführt und initialisiert neue Kategorie
+	 */
 	public void nextCategory() {
 
 		current_category = categories.get(getNewAvailableCategory());
@@ -70,8 +75,29 @@ public class Game {
 		one_round = new OneRound();
 	}
 
+	/*
+	 * Wird Am Ende jeder Frage ausgeführt, wertet die Antworten und aus und startet eine neue
+	 * Frage, die noch nicht gestellt worden ist.
+	 */
 	public Boolean nextQuestion(List<String> selected_choices) {
+		
+		Boolean correct_choices = checkChoicesMadePlayer1(selected_choices);
+		checkChoicesMadePlayer2();
+		
+		current_question = current_category.getQuestions().get(
+				getNewAvailableQuestion());
+		current_runde_frage++;
+		questions.add(current_question);
+		mixAnswers();
+		
+		return correct_choices;
+	}
 
+	/*
+	 * Auswertung der Antworten vom Spieler 1
+	 */
+	public Boolean checkChoicesMadePlayer1(List<String> selected_choices) {
+		
 		boolean correct = true;
 
 		for (Choice correct_choices : current_question.getCorrectChoices()) {
@@ -89,37 +115,62 @@ public class Game {
 			}
 		}
 
-		current_question = current_category.getQuestions().get(
-				getNewAvailableQuestion());
-		current_runde_frage++;
-		questions.add(current_question);
-		mixAnswers();
-
 		if (correct) {
 
-			if (current_runde_frage - 1 == 1) {
+			if (current_runde_frage == 1) {
 				one_round.setPlayer_question1("correct");
 				one_round.IncrementPlayer();
-			} else if (current_runde_frage - 1 == 2) {
+			} else if (current_runde_frage == 2) {
 				one_round.setPlayer_question2("correct");
 				one_round.IncrementPlayer();
-			} else if (current_runde_frage - 1 == 3) {
+			} else if (current_runde_frage == 3) {
 				one_round.setPlayer_question3("correct");
 				one_round.IncrementPlayer();
 			}
 			return true;
-		} else if (current_runde_frage - 1 == 1) {
+		} else if (current_runde_frage == 1) {
 			one_round.setPlayer_question1("incorrect");
-		} else if (current_runde_frage - 1 == 2) {
+		} else if (current_runde_frage == 2) {
 			one_round.setPlayer_question2("incorrect");
-		} else if (current_runde_frage - 1 == 3) {
+		} else if (current_runde_frage == 3) {
 			one_round.setPlayer_question3("incorrect");
 		}
 		return false;
 	}
+	
+	/*
+	 * Auswertung der Antworten vom Spieler 2, also in unserem Fall des Computers
+	 * 60% Chance, um auf die Frage richtig zu antworten
+	 */
+	private void checkChoicesMadePlayer2() {
+		
+		int zahl = generator.nextInt(5);
+		
+		if(zahl == 0 || zahl == 1 || zahl == 2){
+			if (current_runde_frage == 1) {
+				one_round.setPlayer2_question1("correct");
+				one_round.IncrementPlayer2();
+			} else if (current_runde_frage == 2) {
+				one_round.setPlayer2_question2("correct");
+				one_round.IncrementPlayer2();
+			} else if (current_runde_frage == 3) {
+				one_round.setPlayer2_question3("correct");
+				one_round.IncrementPlayer2();
+			}
+		} else {
+			if (current_runde_frage == 1) {
+				one_round.setPlayer2_question1("incorrect");
+			} else if (current_runde_frage == 2) {
+				one_round.setPlayer2_question2("incorrect");
+			} else if (current_runde_frage == 3) {
+				one_round.setPlayer2_question3("incorrect");
+			}
+		}
+	}
 
-	// Liefert nächste Frage zurück, die in dieser Runde noch nicht verwerdet
-	// wurde
+	/*
+	 * Liefert nächste Frage zurück, die in dieser Runde noch nicht verwerdet wurde
+	 */
 	private int getNewAvailableQuestion() {
 
 		boolean not_found = true;
@@ -150,7 +201,9 @@ public class Game {
 		return location;
 	}
 
-	// Liefert nächste Categorie zurück, die in noch nicht verwerdet wurde
+	/*
+	 * Liefert nächste Categorie zurück, die in noch nicht verwerdet wurde
+	 */
 	private int getNewAvailableCategory() {
 
 		boolean not_found = true;
@@ -222,7 +275,9 @@ public class Game {
 		return done_categories.size();
 	}
 
-	// Wird nach jeder Runde ausgeführt und aktialisiert den winner
+	/*
+	 * Wird nach jeder Runde ausgeführt und aktialisiert den winner
+	 */
 	public void aktualizeRoundWinner() {
 		
 		one_round.checkWinner();
