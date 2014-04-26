@@ -12,8 +12,8 @@ import at.ac.tuwien.big.we14.lab2.api.Choice;
 import at.ac.tuwien.big.we14.lab2.api.Question;
 import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
 
-//TODO Letztes Spiel: LocalStorage
-//TODO Falls unentschieden, soll durch Zeitdifferenz ausgerechnet werden, wer gewonnen hat
+// Letztes Spiel: LocalStorage
+// Falls unentschieden, soll durch Zeitdifferenz ausgerechnet werden, wer gewonnen hat
 
 public class Game {
 
@@ -79,9 +79,9 @@ public class Game {
 	 * Wird Am Ende jeder Frage ausgeführt, wertet die Antworten und aus und startet eine neue
 	 * Frage, die noch nicht gestellt worden ist.
 	 */
-	public Boolean nextQuestion(List<String> selected_choices) {
+	public Boolean nextQuestion(List<String> selected_choices, String time_left) {
 		
-		Boolean correct_choices = checkChoicesMadePlayer1(selected_choices);
+		Boolean correct_choices = checkChoicesMadePlayer1(selected_choices, time_left);
 		checkChoicesMadePlayer2();
 		
 		current_question = current_category.getQuestions().get(
@@ -96,7 +96,7 @@ public class Game {
 	/*
 	 * Auswertung der Antworten vom Spieler 1
 	 */
-	public Boolean checkChoicesMadePlayer1(List<String> selected_choices) {
+	public Boolean checkChoicesMadePlayer1(List<String> selected_choices, String time_left) {
 		
 		boolean correct = true;
 
@@ -114,26 +114,32 @@ public class Game {
 				correct = false;
 			}
 		}
-
+		
 		if (correct) {
 
 			if (current_runde_frage == 1) {
 				one_round.setPlayer_question1("correct");
 				one_round.IncrementPlayer();
+				one_round.setPlayer_question1_time(time_left);
 			} else if (current_runde_frage == 2) {
 				one_round.setPlayer_question2("correct");
 				one_round.IncrementPlayer();
+				one_round.setPlayer_question2_time(time_left);
 			} else if (current_runde_frage == 3) {
 				one_round.setPlayer_question3("correct");
 				one_round.IncrementPlayer();
+				one_round.setPlayer_question3_time(time_left);
 			}
 			return true;
 		} else if (current_runde_frage == 1) {
 			one_round.setPlayer_question1("incorrect");
+			one_round.setPlayer_question1_time(time_left);
 		} else if (current_runde_frage == 2) {
 			one_round.setPlayer_question2("incorrect");
+			one_round.setPlayer_question2_time(time_left);
 		} else if (current_runde_frage == 3) {
 			one_round.setPlayer_question3("incorrect");
+			one_round.setPlayer_question3_time(time_left);
 		}
 		return false;
 	}
@@ -145,25 +151,33 @@ public class Game {
 	private void checkChoicesMadePlayer2() {
 		
 		int zahl = generator.nextInt(5);
+		int zahl1 = generator.nextInt(5);
+		int computerTimeLeft = (int) (current_question.getMaxTime()/5) * zahl1;
 		
 		if(zahl == 0 || zahl == 1 || zahl == 2){
 			if (current_runde_frage == 1) {
 				one_round.setPlayer2_question1("correct");
 				one_round.IncrementPlayer2();
+				one_round.setPlayer2_question1_time(Integer.toString(computerTimeLeft));
 			} else if (current_runde_frage == 2) {
 				one_round.setPlayer2_question2("correct");
 				one_round.IncrementPlayer2();
+				one_round.setPlayer2_question2_time(Integer.toString(computerTimeLeft));
 			} else if (current_runde_frage == 3) {
 				one_round.setPlayer2_question3("correct");
 				one_round.IncrementPlayer2();
+				one_round.setPlayer2_question3_time(Integer.toString(computerTimeLeft));
 			}
 		} else {
 			if (current_runde_frage == 1) {
 				one_round.setPlayer2_question1("incorrect");
+				one_round.setPlayer2_question1_time(Integer.toString(computerTimeLeft));
 			} else if (current_runde_frage == 2) {
 				one_round.setPlayer2_question2("incorrect");
+				one_round.setPlayer2_question2_time(Integer.toString(computerTimeLeft));
 			} else if (current_runde_frage == 3) {
 				one_round.setPlayer2_question3("incorrect");
+				one_round.setPlayer2_question3_time(Integer.toString(computerTimeLeft));
 			}
 		}
 	}

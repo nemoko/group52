@@ -43,8 +43,15 @@ public class OneRound {
 		} else if (player2_points > player_points) {
 			winner = "Player 2";
 		} else {
-			//TODO Zeitunterschied vergleichen
-			winner = "Player 1 und Player 2";
+			// Zeitunterschied vergleichen
+			int playerTimeLeft = Integer.parseInt(player_question1_time) + Integer.parseInt(player_question2_time) + Integer.parseInt(player_question3_time);
+			int player2TimeLeft = Integer.parseInt(player2_question1_time) + Integer.parseInt(player2_question2_time) + Integer.parseInt(player2_question3_time);
+			if (playerTimeLeft > player2TimeLeft) {
+				winner = "Player 1";
+			} else if (playerTimeLeft < player2TimeLeft) {
+				winner = "Player 2";
+			} else
+				winner = "Player 1 und Player 2";
 		}
 	}
 

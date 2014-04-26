@@ -100,7 +100,7 @@
 					%>
 				</ul>
 				
-				<input id="timeleftvalue" type="hidden" value="100" /> <input
+				<input id="timeleftvalue" name="timeleftvalue" type="hidden" value="100" /> <input
 					id="next" type="submit" value="weiter" accesskey="s" /> <input
 					type="hidden" name="action" value="weiter" />
 			</form>

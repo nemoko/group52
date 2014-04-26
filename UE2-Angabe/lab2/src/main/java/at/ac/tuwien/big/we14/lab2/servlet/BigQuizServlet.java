@@ -41,7 +41,7 @@ public class BigQuizServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		
 		String action = request.getParameter("action");
 
 		Game game = (Game) request.getSession().getAttribute("game");
@@ -53,14 +53,15 @@ public class BigQuizServlet extends HttpServlet {
 
 				// Die selektierten Antworten
 				String[] value = request.getParameterValues("checkedRows");
-
+				String timeLeft = request.getParameter("timeleftvalue");
+				
 				List<String> values = new ArrayList<String>();
 				if (value != null) {
 					for (int i = 0; i < value.length; i++) {
 						values.add(value[i]);
 					}
 				}
-				correct_choises = game.nextQuestion(values);
+				correct_choises = game.nextQuestion(values, timeLeft);
 
 			}
 		}
