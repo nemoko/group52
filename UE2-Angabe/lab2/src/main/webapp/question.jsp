@@ -116,7 +116,45 @@
 		</section>
 
 		<section id="lastgame">
-			<p>Letztes Spiel: Nie</p>
+			<p id="lastgameinfo"></p>
+			<script type="text/javascript">
+				var lastGame = "Nie";
+				if (supportsLocalStorage()) {
+					<% 
+						if (game.getPlayedCategories() == 1 && game.getCurrentRundeFrage() == 1) {
+					%>
+					 	// Get display values from previous session
+						localStorage["big.quiz.already.played"] = localStorage["big.quiz.already.played.current"];
+						localStorage["big.quiz.played.at.date"] = localStorage["big.quiz.played.at.date.current"];
+						localStorage["big.quiz.played.at.time"] = localStorage["big.quiz.played.at.time.current"];
+						var today = new Date();
+						var dd = today.getDate();
+						var mm = today.getMonth()+1; //January is 0!
+						var yyyy = today.getFullYear();
+
+						if(dd<10) {
+						    dd='0'+dd
+						} 
+
+						if(mm<10) {
+						    mm='0'+mm
+						} 
+						
+						// Persist current time values
+						localStorage["big.quiz.already.played.current"] = "true";
+						localStorage["big.quiz.played.at.date.current"] = mm+'/'+dd+'/'+yyyy;
+						localStorage["big.quiz.played.at.time.current"] = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+						
+					<%
+						}
+					%>
+					if (localStorage["big.quiz.already.played"] == "true") {
+						lastGame = localStorage["big.quiz.played.at.date"] + ", " + localStorage["big.quiz.played.at.time"];
+					}
+				}
+				var displayEl = document.getElementById("lastgameinfo");
+				displayEl.innerHTML = "Letztes Spiel: " + lastGame;
+			</script>
 		</section>
 	</section>
 
