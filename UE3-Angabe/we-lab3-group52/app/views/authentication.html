@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Business Informatics Group Quiz - Login</title>
+        <link rel="stylesheet" type="text/css" href="style/screen.css" />
+    </head>
+    <body id="loginpage">
+        <a class="accessibility" href="#login">Zum Login springen</a>
+        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
+        <nav role="navigation" aria-labelledby="navheading">
+            <h2 id="navheading" class="accessibility">Navigation</h2>
+            <ul>
+                <li><a id="registerlink" title="Klicke hier um dich zu registrieren" href="register.html" accesskey="r">Registrieren</a></li>
+            </ul>
+        </nav>
+        <!-- Login section -->
+        <section role="main">
+            <section id="login" aria-labelledby="loginheading">
+                <form action="login.html" method="get">
+                    <fieldset>
+                        <legend id="loginheading">Login</legend>
+                        <label for="username">Benutzername:</label>
+                        <input id="username" type="text" required="required"/>
+                        <label for="password">Passwort:</label>
+                        <input id="password" type="password" required="required"/>
+                        <input id="loginsubmit" type="submit" value="Anmelden"/>
+                    </fieldset>
+                </form>
+            </section>
+            <!-- Register section -->
+            <section id="register" aria-labelledby="registerheading">
+                <h2 id="registerheading" class="accessibility">Registrierung</h2>
+                <p>Nicht registriert?</p>
+                <a href="register.html">Zur Registierung</a>
+            </section>
+        </section>
+
+        <!-- footer -->
+        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+    </body>
+</html>
