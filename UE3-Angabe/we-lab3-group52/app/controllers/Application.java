@@ -8,7 +8,7 @@ import views.html.*;
 
 public class Application extends Controller {
 
-    @Transactional
+    @play.db.jpa.Transactional
     public static Result index() {
         return ok(index.render("Your new application is now."));
     }

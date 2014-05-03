@@ -1,16 +1,16 @@
-2014-05-03 21:18:04,660 - [INFO] - from play in pool-4-thread-3 
+2014-05-03 21:29:23,083 - [INFO] - from play in pool-4-thread-2 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-05-03 21:18:16,225 - [INFO] - from play in play-internal-execution-context-1 
+2014-05-03 21:37:26,002 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-05-03 21:18:16,537 - [INFO] - from play in play-internal-execution-context-1 
+2014-05-03 21:37:26,215 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-05-03 21:18:16,750 - [ERROR] - from application in New I/O worker #1 
+2014-05-03 21:37:26,305 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6i55cefgi - Internal server error, for (GET) [/] ->
+! @6i55f204d - Internal server error, for (GET) [/] ->
 
 play.api.UnexpectedException: Unexpected exception[PersistenceException: No Persistence provider for EntityManager named defaultPersistenceUnit]
 	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
