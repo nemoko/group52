@@ -1,5 +1,3 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/conf/data.en.json,/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/target/scala-2.10/classes/data.en.json)[0m
-[0m[[0mdebug[0m] [0m	(/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/conf/application.conf,/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/target/scala-2.10/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/conf/data.de.json,/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/target/scala-2.10/classes/data.de.json)[0m
-[0m[[0mdebug[0m] [0m	(/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/conf/routes,/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/target/scala-2.10/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/tomi/Documents/TU Wien/Web Engineering/SS14/UE3-Angabe/we-lab3-group52/conf/application.conf,/Users/tomi/Documents/TU Wien/Web Engineering/SS14/UE3-Angabe/we-lab3-group52/target/scala-2.10/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/tomi/Documents/TU Wien/Web Engineering/SS14/UE3-Angabe/we-lab3-group52/conf/routes,/Users/tomi/Documents/TU Wien/Web Engineering/SS14/UE3-Angabe/we-lab3-group52/target/scala-2.10/classes/routes)[0m
