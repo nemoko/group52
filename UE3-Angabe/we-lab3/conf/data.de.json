@@ -1,0 +1,479 @@
+[
+    { "name": "Web Engineering",
+      "questions": [
+        { "id": 1,
+          "text": "Was sind gültige HTTP-Methoden?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "RETRIEVE" },
+            {	"text" : "CHECK" },
+            {	"text" : "REMOVE" },
+            {	"text" : "CREATE" }
+          ],
+          "correctChoices": [ // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+            {	"text" : "POST" },
+            {	"text" : "HEAD" }
+          ]
+        },
+        { "id": 2,
+          "text": "Welche Prinzipien gehören zu den \"Web Accessibility Guidelines\"?",
+          "maxTime": 40,
+          "wrongChoices": [
+            {	"text" : "Clear" },
+            {	"text" : "Maintainable" },
+            {	"text" : "Observable" },
+            {	"text" : "Implementable" }
+          ],
+          "correctChoices": [ // Perceivable, Operable, Understandable, Robust
+            {	"text" : "Perceivable" },
+            {	"text" : "Robust" }
+          ]
+        },
+        { "id": 3,
+          "text": "Welche Elemente wurden in HTML5 neu eingeführt?",
+          "maxTime": 35,
+          "wrongChoices": [
+            {	"text" : "fieldset" },
+            {	"text" : "caption" },
+            {	"text" : "textarea" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "canvas" },
+            {	"text" : "header" },
+            {	"text" : "meter" }
+          ]
+        },
+        { "id": 4,
+          "text": "Welche der folgenden Sprachen sind ECMAScript-Implementierungen?",
+          "maxTime": 40,
+          "wrongChoices": [
+            {	"text" : "F-Script" },
+            {	"text" : "AppleScript" },
+            {	"text" : "VBScript" }
+          ],
+          "correctChoices": [
+            {	"text" : "JScript" },
+            {	"text" : "JavaScript" },
+            {	"text" : "QtScript" }
+          ]
+        },
+        { "id": 5,
+          "text": "Welche Technologien kommen im \"Semantic Web\" zum Einsatz?",
+          "maxTime": 45,
+          "wrongChoices": [
+            {	"text" : "SQL" },
+            {	"text" : "CAT" }
+          ],
+          "correctChoices": [
+            {	"text" : "RDF" },
+            {	"text" : "OWL" },
+            {	"text" : "SPARQL" }
+          ]
+        },
+        { "id": 6,
+          "text": "JavaScript...",
+          "maxTime": 60,
+          "wrongChoices": [
+            {	"text" : "hat statische Typen." },
+            {	"text" : "läuft immer server-seitig." },
+            {	"text" : "hat Klassen und Objekte." }
+          ],
+          "correctChoices": [
+            {	"text" : "ist objekt-orientiert." },
+            {	"text" : "wird interpretiert." },
+            {	"text" : "hat dynamische Typen." }
+          ]
+        },
+        { "id": 7,
+          "text": "Was sind mögliche Web Design-Methoden?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Regressive shrinkage" }
+          ],
+          "correctChoices": [
+            {	"text" : "Graceful degradation" },
+            {	"text" : "Progressive enhancement" },
+            {	"text" : "Responsive design" }
+          ]
+        }
+      ]
+    },
+    { "name": "TU Wien",
+      "questions": [
+        { "id": 8,
+          "text": "Welche Fakultäten gibt es an der TU Wien?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Medizin" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "Technische Chemie" },
+            {	"text" : "Physik" },
+            {	"text" : "Informatik" }
+          ]
+        },
+        { "id": 9,
+          "text": "Welche Institute gibt es an der Fakultät für Informatik?",
+          "maxTime": 40,
+          "wrongChoices": [
+            {	"text" : "Verkehrswissenschaften" },
+            {	"text" : "Computertechnik" },
+            {	"text" : "Mikroelektronik" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "Gestaltuns- und Wirkungsforschung" },
+            {	"text" : "Softwaretechnik und Interaktive Systeme" }
+          ]
+        },
+        { "id": 10,
+          "text": "Wer ist RektorIn der TU Wien?",
+          "maxTime": 40,
+          "wrongChoices": [
+            {	"text" : "Dr. Adalbert Prechtl" },
+            {	"text" : "Mag. Anna Steiger" },
+            {	"text" : "Dr. Peter Skalicky" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "Dr. Sabine Seidler" }
+          ]
+        },
+        { "id": 11,
+          "text": "Wann wurde die TU Wien gegründet?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "1915" },
+            {	"text" : "1955" },
+            {	"text" : "1845" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "1815" }
+          ]
+        },
+        { "id": 12,
+          "text": "Unter den Top 3 belegten Studien an der TU Wien befinden sich...",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Bauingenieurwesen" },
+            {	"text" : "Maschinenbau" },
+            {	"text" : "Wirtschaftsinformatik" }
+          ],
+          "correctChoices": [ // http://www.tuwien.ac.at/wir_ueber_uns/zahlen_und_fakten/
+            {	"text" : "Informatik" },
+            {	"text" : "Architektur" },
+            {	"text" : "Elektrotechnik" }
+          ]
+        },
+        { "id": 13,
+          "text": "Welche Standorte hat die TU Wien?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Freyung" },
+            {	"text" : "Universitätsring" }
+          ],
+          "correctChoices": [
+            {	"text" : "Freihausgründe" },
+            {	"text" : "Favoritenstraße" }
+          ]
+        },
+        { "id": 14,
+          "text": "Wieviele fortgemeldete Studierende hat die TU Wien im SS14?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "15.000 - 20.000" },
+            {	"text" : "10.000 - 15.000" },
+            {	"text" : "25.000 - 30.000" }
+          ],
+          "correctChoices": [
+            {	"text" : "20.000 - 25.000" }
+          ]
+        }
+      ]
+    },
+    { "name": "Semistrukturierte Daten",
+      "questions": [
+        { "id": 15,
+          "text": "XML ist...",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "eine Programmiersprache" },
+            {	"text" : "ein Netzwerkprotokoll" },
+            {	"text" : "eine Datenbank" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "eine Auszeichnungssprache" }
+          ]
+        },
+        { "id": 16,
+          "text": "Welche Sprachen werden zum Abfragen von XML verwendet?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "JAQL" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "XPath" },
+            {	"text" : "XQuery" },
+            {	"text" : "XSLT" }
+          ]
+        },
+        { "id": 17,
+          "text": "Welche Sprachen werden zum Abfragen von JSON verwendet?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "XSLT" },
+            {	"text" : "JSON Find" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "JSON Path" },
+            {	"text" : "JSON Query" }
+          ]
+        },
+        { "id": 18,
+          "text": "Welche Sprachen eignen sich um semistrukturierte Daten zu definieren?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Schema" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "XML" },
+            {	"text" : "JSON" },
+            {	"text" : "YAML" }
+          ]
+        },
+        { "id": 19,
+          "text": "Welche Sprachen eignen sich zur Schemadefinition in XML?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "XML Definition" },
+            {	"text" : "DTD Schema" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "XML Schema" },
+            {	"text" : "Document Type Definition" }
+          ]
+        },
+        { "id": 20,
+          "text": "Welche bekannten Parser gibt es für XML?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "MGF" },
+            {	"text" : "XMP" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "SAX" },
+            {	"text" : "DOM" }
+          ]
+        },
+        { "id": 21,
+          "text": "Welche Attributtypen gibt es bei DTDs?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "BDATA" },
+            {	"text" : "REFERENCE" },
+            {	"text" : "ELEMENT" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "CDATA" },
+            {	"text" : "ENTITY" },
+            {	"text" : "ID" }
+          ]
+        }
+      ]
+    },
+    { "name": "Internet Technologien",
+      "questions": [
+        { "id": 22,
+          "text": "Welche Versionen des Internet Protokolls sind heutzutage im Einsatz?",
+          "maxTime": 15,
+          "wrongChoices": [
+            {	"text" : "IPv9" },
+            {	"text" : "IPv0" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "IPv4" },
+            {	"text" : "IPv6" }
+          ]
+        },
+        { "id": 23,
+          "text": "Welche IPv4-Adressen gehören dem privaten Netzbereich an und werden im Internet nicht geroutet?",
+          "maxTime": 40,
+          "wrongChoices": [
+            {	"text" : "192.166.2.1" },
+            {	"text" : "172.33.250.250" },
+            {	"text" : "11.0.0.1" }
+          ],
+          "correctChoices": [
+            {	"text" : "192.168.252.3" },
+            {	"text" : "10.0.0.1" },
+            {	"text" : "172.31.255.1" }
+          ]
+        },
+        { "id": 24,
+          "text": "Welche Protokolle befinden sich in der Transportschicht?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "IP" },
+            {	"text" : "PTPP" },
+            {	"text" : "DHCP" },
+            {	"text" : "NTP" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "TCP" },
+            {	"text" : "UDP" }
+          ]
+        },
+        { "id": 25,
+          "text": "Welche Protokolle befinden sich in der Applikationsschicht?",
+          "maxTime": 35,
+          "wrongChoices": [
+            {	"text" : "PTPP" },
+            {	"text" : "UDP" },
+            {	"text" : "IP" }
+          ],
+          "correctChoices": [ 
+            {	"text" : "DNS" },
+            {	"text" : "FTP" },
+            {	"text" : "SOCKS" },
+            {	"text" : "HTTP" },
+            {	"text" : "SSH" }
+          ]
+        },
+        { "id": 26,
+          "text": "Welche Protokolle befinden sich in der Internetschicht?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "UDP" },
+            {	"text" : "TCP" },
+            {	"text" : "FTP" },
+            {	"text" : "HTTP" },
+            {	"text" : "SSH" }
+          ],
+          "correctChoices": [
+            {	"text" : "IP" }
+          ]
+        },
+        { "id": 27,
+          "text": "Welche Protokolle befinden sich in der Netzzugangsschicht?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "SOCKS" },
+            {	"text" : "POP" },
+            {	"text" : "FTP" },
+            {	"text" : "IP" }
+          ],
+          "correctChoices": [
+            {	"text" : "Ethernet" },
+            {	"text" : "Token Ring" }
+          ]
+        },
+        { "id": 28,
+          "text": "Welche Schichten gibt es im TCP/IP-Referenzmodell?",
+          "maxTime": 35,
+          "wrongChoices": [
+            {	"text" : "Sitzung" },
+            {	"text" : "Bitübertragung" },
+            {	"text" : "Darstellung" },
+            {	"text" : "Vermittlung" }
+          ],
+          "correctChoices": [
+            {	"text" : "Anwendungen" },
+            {	"text" : "Internet" },
+            {	"text" : "Netzzugang" },
+            {	"text" : "Transport" }
+          ]
+        }
+      ]
+    },
+    { "name": "Internet und -verwendung",
+      "questions": [
+        { "id": 29,
+          "text": "Unter den Top 5 der Länder, mit den meisten Internet-Usern befinden sich...",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "United Kingdom" },
+            {	"text" : "Russland" },
+            {	"text" : "Deutschland" }
+          ],
+          "correctChoices": [ // http://www.internetworldstats.com/top20.htm
+            {	"text" : "United States" },
+            {	"text" : "Indien" },
+            {	"text" : "Japan" }
+          ]
+        },
+        { "id": 30,
+          "text": "Die meisten Internet-User in absoluten Zahlen gibt es in...",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Europa" },
+            {	"text" : "Nord Amerika" },
+            {	"text" : "Afrika" }
+          ],
+          "correctChoices": [ // http://www.internetworldstats.com/stats.htm
+            {	"text" : "Asien" }
+          ]
+        },
+        { "id": 31,
+          "text": "Was ist das meist genutzte Social Network?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Google+" },
+            {	"text" : "Twitter" },
+            {	"text" : "Instagramm" },
+            {	"text" : "Pinterest" }
+          ],
+          "correctChoices": [
+            {	"text" : "Facebook" }
+          ]
+        },
+        { "id": 32,
+          "text": "Wieviele eindeutige Benutzer hat Youtube ungefähr pro Monat?",
+          "maxTime": 30,
+          "wrongChoices": [
+            {	"text" : "Über eine Million" },
+            {	"text" : "Über zehn Millionen" },
+            {	"text" : "Über hundert Millionen" }
+          ],
+          "correctChoices": [ // http://www.youtube.com/yt/press/statistics.html
+            {	"text" : "Über eine Milliarde" }
+          ]
+        },
+        { "id": 33,
+          "text": "Welche Unternehmen gehören zu Facebook?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "Pinterest" },
+            {	"text" : "Twitter" }
+          ],
+          "correctChoices": [
+            {	"text" : "Instagramm" },
+            {	"text" : "WhatsApp" }
+          ]
+        },
+        { "id": 34,
+          "text": "Wer der folgenden Personen hat Google (mit-)begründet?",
+          "maxTime": 40,
+          "wrongChoices": [
+            {	"text" : "Eric Schmidt" },
+            {	"text" : "Dustin Moskovitz" },
+            {	"text" : "Andrew McCollum" },
+            {	"text" : "Mark Zuckerberg" }
+          ],
+          "correctChoices": [
+            {	"text" : "Larry Page" },
+            {	"text" : "Sergey Brin" }
+          ]
+        },
+        { "id": 35,
+          "text": "Wieviele Haushalte in Österreich haben Breitband-Internetzugang?",
+          "maxTime": 20,
+          "wrongChoices": [
+            {	"text" : "50\% - 75\%" },
+            {	"text" : "0\% - 50\%" },
+            {	"text" : "85\%+" }
+          ],
+          "correctChoices": [ // http://www.statistik.at/web_en/statistics/information_society/ict_usage_in_households/041018.html
+            {	"text" : "75\% - 85\%" }
+          ]
+        }
+      ]
+    }
+]
