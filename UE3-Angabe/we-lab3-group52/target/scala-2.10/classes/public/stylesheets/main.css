@@ -1,0 +1,688 @@
+@charset "utf-8";
+
+/* general rules */
+
+* {
+    font-size: 100%;
+    padding: 0;
+    margin: 0 0 1em 0;
+    line-height: 1.5em;
+}
+
+body  {
+    font: 100% Arial, Helvetica, Clear, sans-serif;
+    margin: 0; 
+    padding: 0;
+    text-align: left; 
+    background-image: url(../images/style1-background.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #4182bd;
+    color: #fff;
+    display:block;
+    min-width:20em;
+}
+
+fieldset{
+    border: 0;
+}
+
+section{
+    display: block;
+}
+
+header{
+    
+    width:inherit;
+    min-height: 47px;
+    height:3.5em;
+    padding: 0.7ex 0 0 80px;
+    
+    background-image: url(../images/big-logo-small.png);
+    background-position:left 1em top 5px;
+    background-repeat:no-repeat;
+    
+    display: block;
+    float:left;
+}
+
+header h1{
+    font-size:2em;
+}
+
+nav {
+    background-color: #033058;
+    color: #fff;
+    padding: 1ex 1em 0.5ex 1em;
+    height: 3em;
+    min-height: 47px;
+}
+
+nav ul{
+    float:right;
+    height:100%;
+}
+
+nav ul li{
+    list-style: none;
+    float:left;
+    margin: 1ex;
+}
+
+a {
+    padding: 0.25em 2em 0.25em 2em;
+    
+    background-color: #f29400;
+    
+    border: 0.15ex solid #c37700 ;
+    border-radius: 0.4em;
+    
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+legend{
+    font-size:1.3em;
+    font-weight:bold;
+    display: block;
+    clear: both;
+    color: #fff;
+}
+
+.hide{
+    display:none;
+}
+
+/* Accessibility rules */
+
+.accessibility, #loginpage nav {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+@media screen and ( max-width:32em ){
+    header h1{
+        font-size:2em;
+    }
+    
+    nav ul li a{
+        display: block;
+        padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+}
+
+/* 
+   #######################################################
+        Login & Register styles
+   #######################################################
+*/
+
+#loginpage header {
+    
+    width: 14em;
+    min-height: 186px;
+    padding: 1em 0 0 206px;
+    margin: 10px auto 0 auto;
+    
+    background-image: url(../images/big-logo-big.png);
+    background-repeat: no-repeat;
+    background-position:left top;
+    
+    display: block;
+    float: none;
+}
+
+#loginpage header h1{
+    padding: 0;
+    margin: 0;
+    
+    font-size:6em;
+}
+
+div[role="alert"]{
+    clear:both;
+    font-weight: bold;
+    padding:1em;
+    background-color: #e60808;
+}
+
+input.error{
+    border: 0.15ex solid #f00 !important;
+}
+
+
+#login label, #register label {
+    display: block;
+    width: 7em;
+    /*text-align: left;*/
+    padding: 0.25em 0 0.25em 0;
+    float: left;
+    clear: both;
+}
+
+#login input, #register input{
+    display:block;
+    width: 15em;
+    padding: 0.25em 1ex 0.25em 1ex;
+    margin-bottom: 0.5em;
+    float: right;
+    
+    border: 0.15ex solid #03345f;
+    border-radius: 0.5ex;
+    
+    background-color: #fff;
+}
+
+#register select{
+    display:block;
+    width: 16.3em;
+    padding: 0.25em 1ex 0.25em 1ex;
+    margin-bottom: 0.5em;
+    float: right;
+    
+    border: 0.15ex solid #03345f;
+    border-radius: 0.5ex;
+    
+    background-color: #fff;
+    
+}
+
+option{
+    margin:0;
+}
+
+#login input[type=submit], #register input[type=submit], #quiz input[type=submit] {
+    margin: 0 0 0 0em;
+    padding: 0.25em 3em 0.25em 2em;
+    width:inherit;
+    
+    background-color: #36d344;
+    background-image: url(../images/white-arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    
+    border: 0.15ex solid #116d01;
+    border-radius: 0.4em;
+    
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    float:right;
+    display: block;
+}
+
+#quiz input[type=submit] {
+    float: none;
+    margin: auto;
+    clear: both;
+}
+
+#login input[type=submit]:disabled, #register input[type=submit]:disabled{
+    background-color: #ccc;
+}
+
+section[role="main"]{
+    margin: 0;
+    padding: 0;
+}
+
+#loginpage section, #registerpage section{
+    width: 26em;
+    margin: 2em auto 0 auto;
+    clear: both;
+}
+
+#loginpage #register {    
+    text-align:center;
+}
+
+#register a {
+    width:inherit;
+    padding: 0.25em 2em 0.25em 2em;
+    
+    background-color: #f29400;
+    
+    border: 0.15ex solid #c37700 ;
+    border-radius: 0.4em;
+    
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+#register p {
+    font-weight:bold;
+}
+
+p#requiredhint{
+    clear: both;
+    font-weight: normal;
+    padding:1em;
+    text-align:center;
+}
+
+footer {
+    width:10em;
+    text-align: center;
+    margin: 3em auto 0 auto;
+}
+
+/* alternative for small screens */
+
+@media screen and ( max-width:32em ){
+    
+    #loginpage header{
+        display: block;
+        
+        width:inherit;
+        min-height: 47px;
+        padding: 1em 0 0 80px;
+        margin: 0 auto 0 auto;
+        
+        background-image: url(../images/big-logo-small.png);
+        background-position:left 1em top 1em;
+    }
+    
+    #loginpage header h1{
+        padding: 0;
+        margin: 0;
+        
+        font-size:2em;
+    }
+    
+    #login input, #register input, #register select{
+        display:block;
+        
+        width: 96%;
+        margin: 0 1% 1em 1%;
+        padding: 0.25em 1% 0.25em 1%;
+        float: none;
+    }
+    
+    #register select{
+        width: 98%;
+    }
+    
+    #login label, #register label {
+        display: block;
+        
+        width:auto;
+        padding: 0 1% 0 1%;
+        margin: 0 0 0 0;
+        
+        text-align: left;
+    }
+    
+    legend{
+        margin:0;
+        
+        text-align:center;
+        font-size:1.2em;
+    }
+    
+    input[type=submit] {
+        display: block;
+        margin: 0 1% 0 1%;
+        width: 98%;
+        padding: 0.5em 3em 0.5em 2em;
+    }
+    
+    #loginpage section, #registerpage section{
+        margin: 0.5em auto 0 auto;
+        width: auto;
+    }
+    
+    #register a {
+        padding: 0.5em 0em 0.5em 0em;
+        display: block;
+        margin: 0 1% 0 1%;
+        width: 98%;
+    }
+    
+    #register p {
+        font-weight:bold;
+        font-size:1.2em
+    }
+    
+    p#requiredhint{
+        clear: both;
+        font-weight: normal;
+        padding:1em;
+        text-align:center;
+    }
+    
+}
+
+/* 
+   #######################################################
+        Question styles
+   #######################################################
+*/
+
+#questionpage section, #roundwinnerpage section{
+    clear:both;
+}
+
+#player1info, #player2info {
+    min-width:63px;
+    width: 6em;
+    height: 4em;
+}
+
+#player1info span, #player2info span{
+    margin:0;
+}
+
+#player1info {
+    float:left;
+    text-align: center;
+    font-weight: bold;
+}
+
+#player2info {
+    float: right;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#currentcategory {
+    display:block;
+    width: 10em;
+    margin: 0 auto 0 auto;
+    padding: 0 3em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.correct, .incorrect, .unknown {
+    text-indent: -999999em;
+    text-align: left;
+    display: block;
+}
+
+.correct {
+    width:21px;
+    height:21px;
+    
+    background-image: url(../images/correct-white.png);
+    background-repeat: no-repeat;
+}
+
+.incorrect {
+    width: 21px;
+    height: 21px;
+    
+    background-image: url(../images/incorrect-white.png);
+    background-repeat: no-repeat;
+}
+
+.unknown {
+    width: 21px;
+    height: 21px;
+    
+    background-image: url(../images/unknown-white.png);
+    background-repeat: no-repeat;
+}
+
+.playerroundsummary {
+    display: block;
+    margin: 0;
+}
+
+.playerroundsummary li{
+    list-style: none;
+    margin:2px;
+    display:inline-block;
+}
+
+#question {
+    width:80%;
+    margin:0 auto 0 auto;
+    clear: none;
+}
+
+#questiontext {
+    text-align: center;
+    font-size: 1.5em
+}
+
+#question li {
+    list-style: none;
+    display: inline-block;
+    width:49%;
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+
+#question input[type="checkbox"] {
+    display:block;
+    position: absolute;
+    left: -999999em;
+}
+
+#question input[type="checkbox"] + label{
+    display: inline-block;
+    
+    width: 98%;
+    padding: 1em 0;
+    margin: 1% 0 1% 1%;
+    
+    background-color: #b9d6f0;
+    color: #033058;
+    text-align:center;
+    
+    border-radius: 1ex;
+    cursor: pointer;
+}
+
+#question input[type="checkbox"]:checked + label{
+    display: inline-block;
+    background-color: #033058;
+    color: #fff;
+}
+
+
+#roundinfo {
+    width:80%;
+    margin:0 auto 0 auto;
+}
+
+section#timer {
+    clear: none;
+    width:80%;
+    margin:0 auto 0 auto;
+}
+
+section#lastgame{
+    clear: both;
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+#question input[type="submit"] {
+    margin: 0 2% 0 0;
+    padding: 0.25em 3em 0.25em 2em;
+    width:inherit;
+    
+    background-color: #36d344;
+    background-image: url(../images/white-arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    
+    border: 0.15ex solid #116d01;
+    border-radius: 0.4em;
+    
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    float: right;
+    
+    cursor: pointer;
+}
+
+#timer p {
+    margin: 0;
+    width: 50%
+}
+
+#timer meter {
+    display: block;
+    width: 49%
+}
+
+/* alternative for small screens */
+
+@media screen and ( max-width:32em ){
+    #currentcategory {
+        width: 6em;
+        clear:both;
+        margin-bottom: 1em;
+    }
+    
+    #player1info, #player2info {
+        margin:0;
+    }
+    
+    #question li {
+        list-style: none;
+        display: inline-block;
+        width:100%;
+        margin: 0 auto 0 auto;
+        padding: 0;
+    }
+    
+    #question input[type="submit"] {
+        float: none;
+        width: 100%;
+    }
+    
+    #timer p {
+        margin: 0;
+        width: 100%
+    }
+    
+    #timer meter {
+        display: block;
+        width: 100%
+    }
+}
+
+/* 
+   #######################################################
+        game result rules
+   #######################################################
+*/
+
+#roundwinner {
+    width:80%;
+    margin:0 auto 0 auto;
+    
+    text-align: center;
+    font-size: 2.1em;
+    font-weight: bold;
+    clear:both;
+}
+
+#winnerpage input[type=submit] {
+    padding: 0.25em 2em 0.25em 2em;
+    
+    background-color: #f29400;
+    
+    border: 0.15ex solid #c37700 ;
+    border-radius: 0.4em;
+    
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    
+    cursor: pointer;
+}
+
+#winnerpage footer {
+    clear:both;
+}
+
+#winnerpage .playerinfo {
+    width: 48%;
+    height: 8em;
+}
+
+#winnerpage .playername {
+    font-size: 1.5em;
+}
+
+#winnerpage .playerroundcounter{
+    font-size: 1.2em;
+}
+
+#winnerpage #next{
+    display:block;
+    clear: both;
+    float: right;
+}
+
+/* alternative for small screens */
+
+@media screen and ( max-width:32em ){
+    #winnerpage #next{
+        padding: 0.5em 0em 0.5em 0em;
+        display: block;
+        margin: 0;
+        width: 100%;
+        float: none;
+    }
+}
+
+/* 
+   #######################################################
+        category selection rules
+   #######################################################
+*/
+
+#categoryselection {
+    width:80%;
+    margin:0 auto 0 auto;
+    clear: both;
+}
+
+#categoryselection p{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#categorylist {
+    list-style:none;
+}
+
+#categorylist li{
+    display: block;
+    float: left;
+    width: 32%;
+}
+
+#categorylist a{
+    display: block;
+    width: 96%;
+    padding: 4% 1%;
+}
+
+#categoryselectionpage footer{
+    clear:both;
+}
+
+@media screen and ( max-width:32em ){
+    #categorylist li{
+        display: block;
+        float: none;
+        width: 100%
+    }
+}

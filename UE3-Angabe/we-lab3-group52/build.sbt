@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(
 )     
 
 templatesImport += "scala.collection._"
-templatesImport += "at.ac.tuwien.big.we14.lab2.api._"
+
+templatesImport += "lib._"
 
 play.Project.playJavaSettings
