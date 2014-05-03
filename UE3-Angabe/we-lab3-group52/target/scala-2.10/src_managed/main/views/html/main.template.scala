@@ -40,8 +40,7 @@ Seq[Any](format.raw/*1.32*/("""
     <body>
         """),_display_(Seq[Any](/*13.10*/content)),format.raw/*13.17*/("""
     </body>
-</html>
-"""))}
+</html>"""))}
     }
     
     def render(title:String,content:Html): play.api.templates.HtmlFormat.Appendable = apply(title)(content)
@@ -53,9 +52,9 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat May 03 12:05:18 CEST 2014
-                    SOURCE: /Users/tomi/Documents/TU Wien/Web Engineering/SS14/UE3-Angabe/we-lab3-group52/app/views/main.scala.html
-                    HASH: 269b46d0510c6906d1a4d27ca715f76cc91ac485
+                    DATE: Sat May 03 21:13:52 CEST 2014
+                    SOURCE: /home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/app/views/main.scala.html
+                    HASH: 382a840a489a71b2844a3319674d882707cc7233
                     MATRIX: 778->1|902->31|990->84|1016->89|1113->151|1127->157|1182->191|1278->252|1292->258|1345->290|1406->315|1421->321|1488->366|1591->433|1620->440
                     LINES: 26->1|29->1|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|41->13|41->13
                     -- GENERATED --

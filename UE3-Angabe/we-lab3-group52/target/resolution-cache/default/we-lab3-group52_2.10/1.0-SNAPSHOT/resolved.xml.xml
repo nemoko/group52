@@ -4,7 +4,7 @@
 		module="we-lab3-group52_2.10"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20140503120517"
+		publication="20140503211752"
 	>
 		<description>
 		we-lab3-group52
@@ -36,10 +36,13 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.10" rev="2.2.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java-jpa_2.10" rev="2.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.1.Final" conf="compile->default(compile)"/>
+		<dependency org="com.google.code.gson" name="gson" rev="2.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.3" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.3" conf="docs->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

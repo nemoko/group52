@@ -1,3 +1,33 @@
 eclipse
 play start
 start
+clean
+start
+run
+clean
+run
+clean
+run 9001
+reload
+run
+reload
+run
+debug
+idea
+debug
+exit
+debug
+clean
+clean all
+exit
+debug
+exit
+debug
+:debug
+play debug
+exit
+debug
+idea
+debug
+exit
+run

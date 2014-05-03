@@ -1,6 +1,6 @@
-// @SOURCE:/Users/tomi/Documents/TU Wien/Web Engineering/SS14/UE3-Angabe/we-lab3-group52/conf/routes
-// @HASH:9c24f09449355737d0bfbe9ca53280febbd777c7
-// @DATE:Sat May 03 12:05:17 CEST 2014
+// @SOURCE:/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/conf/routes
+// @HASH:73b6ec746cf8e3013fb694b1577e466013e47b6b
+// @DATE:Sat May 03 21:13:45 CEST 2014
 
 package controllers;
 
