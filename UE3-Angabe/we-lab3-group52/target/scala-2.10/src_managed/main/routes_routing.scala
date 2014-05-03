@@ -1,6 +1,6 @@
 // @SOURCE:/home/moko/Dropbox/SS14/webEng/group52/UE3-Angabe/we-lab3-group52/conf/routes
 // @HASH:9c24f09449355737d0bfbe9ca53280febbd777c7
-// @DATE:Sat May 03 12:39:18 CEST 2014
+// @DATE:Sat May 03 13:23:21 CEST 2014
 
 
 import play.core._
